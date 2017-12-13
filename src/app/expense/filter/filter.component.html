@@ -1,0 +1,44 @@
+<div class='filter-container'>
+    <div class="filter pane sidebar-wrapper-filter">
+        <div class="filter-head">
+            <span class="e-icon filter-icon filter-head-item"></span>
+            <span class="filter-txt filter-head-item">Filters</span>
+        </div>
+        <div class="expense-filter-container">
+            <label class="label-font">Select a range</label>
+            <div class='filter-item'>
+                <ej-daterangepicker #filterDateRange class="DateTime" format='MM/dd/yyyy' cssClass='DateTime' [startDate]='app.startDate' [endDate]='app.endDate' (change)='dateRangeChanged($event)'></ej-daterangepicker>
+            </div>
+            <label class="label-font">Category</label>
+            <div class="treeview filter-item">
+                <ej-multiselect #filterMultiSelect [dataSource]='filterCategory' mode='box' placeholder='Select Categories' hideSelectedItem='true' closePopupOnSelect='false' (select)='categorySelected($event)' (removed)='categoryRemoved($event)'> </ej-multiselect>
+            </div>
+            <label class="label-font bottom-align">Cashflow</label>
+            <div class="cashflow filter-item">
+                <ej-checkbox #filterIncome id="income" class="cashflow-section" [checked]="true" label="Income" cssClass='TransactionType' (change)='checkBoxStateChanged($event)'></ej-checkbox>
+                <ej-checkbox #filterExpense id="expenses" class="cashflow-section" [checked]="true" label="Expense" cssClass='TransactionType' (change)='checkBoxStateChanged($event)'></ej-checkbox>
+            </div>
+            <label class="label-font bottom-align">Payment mode</label>
+            <div class="paymentModes filter-item">
+                <ej-checkbox #filterCash id="cash" label="Cash" class="cashflow-section" cssClass='PaymentMode' [checked]="true" (change)='checkBoxStateChanged($event)'></ej-checkbox>
+                <ej-checkbox #filterDebit id="debitcard" class="cashflow-section" label="Debit Card" cssClass='PaymentMode' [checked]="true" (change)='checkBoxStateChanged($event)'></ej-checkbox>
+                <br/><br/>
+                <ej-checkbox #filterCredit id="creditcard" class="cashflow-section" label="Credit Card" [checked]="true" cssClass='PaymentMode' (change)='checkBoxStateChanged($event)'></ej-checkbox>
+            </div>
+            <div>
+                <label class="label-font">Amount</label>
+                <div class='amount-filter'>
+                    <div class='min-numeric amt-filter'>
+                        <label class="inlineAlign minLabel">Min :</label>
+                        <ej-numerictextbox cssClass="inlineAlign" #filterMinAmount width='60px' [showSpinButton]="false" format='n0' floatLabelType='Always' format="c2" [min]="minValue" [value]="minValue" (change)='amountChanged()'></ej-numerictextbox>
+                    </div>
+                    <span class='amt-filter separateLine'></span>
+                    <div class='max-numeric amt-filter'>
+                        <label class="inlineAlign maxLabel">Max :</label>
+                        <ej-numerictextbox cssClass="inlineAlign" #filterMaxAmount width='60px' [showSpinButton]="false" format='n0' floatLabelType='Always' format="c2" [min]="maxValue" [value]="maxValue" (change)='amountChanged()'></ej-numerictextbox>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

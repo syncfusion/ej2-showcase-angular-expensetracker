@@ -1,0 +1,41 @@
+<nav class="navbar navbar-default" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <span id="menu-toggle" href="#" class="navbar-toggle e-icon" style="float:left" (click)='toggleMenu()'></span>
+      <div class="navbar-brand samplenameheader"></div>
+      <span id="filter-toggle" href="#" class="navbar-toggle filter-toggle e-icon" style="float:right" (click)='toggleFilterMenu()'></span>
+    </div>
+  </div>
+</nav>
+<div id="sidebar-wrapper" class="sidebar-toggle">
+  <div class='samplename-header'>
+    <div class='samplename'></div>
+  </div>
+  <div class="info align-center">
+    <div class="image"></div>
+    <div class="content nameContent">
+      <p class='name'>{{userName}}</p>
+      <div class='wallet-container'>
+        <span style='height: 27px;' class='balance-align'><img src="./assets/images/cash-wallet.svg" /></span>
+        <span id="current-balance" class='balance-align'>$ 0</span>
+      </div>
+    </div>
+  </div>
+  <div class="page-list align-center nav-list">
+    <div class='nav-item'>
+      <a class="overview ripple-element" id="nav-overview" [routerLink]="['/dashboard']" routerLinkActive="active-link">Dashboard</a>
+    </div>
+    <div class='nav-item'>
+      <a class="expense ripple-element" id="nav-expense" [routerLink]="['/expense']" routerLinkActive="active-link">Transactions</a>
+    </div>
+    <div class='nav-item'>
+      <a class="about ripple-element" id="nav-about" [routerLink]="['/about']" routerLinkActive="active-link">About</a>
+    </div>
+  </div>
+</div>
+<div class="content container-fluid rightpane">
+  <div class="content-wrapper">
+    <router-outlet></router-outlet>
+  </div>
+</div>
+<div id="overlay" (click)='handleOverlay()'></div>

@@ -1,0 +1,42 @@
+<div class='pie-chart-container'>
+    <div class="row pie-chart" id='totalExpense'>
+        <div class="col-xs-12 col-sm-12 col-md-12">
+            <div class="pane col-xs-12 col-sm-12 col-md-12 pie-container">
+                <div class="pieChartHeader">
+                    <p class="chart-title">Total Expenses</p>
+                    <p id="rangeDate" class="chart-value"></p>
+                </div>
+                <div class="row">
+                    <div class="pieChart">
+                        <ej-accumulationchart style='display: block;' #pie id="total-expense" #pie width='100%' height='350px' enableSmartLabels=true [legendSettings]='legendSettings' (textRender)='onTextRender($event)' (animationComplete)='onAnimateCompleted($event)' (loaded)='onChartLoaded($event)'>
+                            <e-accumulation-series-collection>
+                                <e-accumulation-series xName='text' yName='y' startAngle='0' endAngle='360' innerRadius='50%' radius='83%' [groupTo]='groupValue' [palettes]='colorPalettes' [dataLabel]='dataLabel' [dataSource]='pieRenderingData' [animation]='animation'>
+                                </e-accumulation-series>
+                            </e-accumulation-series-collection>
+                        </ej-accumulationchart>
+                    </div>
+                    <div class="chartLegend" style="margin: 0 auto;">
+                        <ej-grid #legendGrid id="legend-grid" class="legendGrid pane" style="box-shadow: none; min-width: 250px;" width='100%' [dataSource]='pieRenderData' (load)='onGridLoad($event)' (dataBound)='onGridDataBound($event)'>
+                            <e-columns>
+                                <e-column field='color' width='10%' textAlign='center'></e-column>
+                                <e-column field='text' width='50%'></e-column>
+                                <e-column field='y' width='20%'></e-column>
+                                <e-column field='x' width='20%'></e-column>
+                            </e-columns>
+                            <ng-template #rowTemplate let-data>
+                                <tr style="height: 30px;">
+                                    <td>
+                                        <div style="width: 16px; height: 16px; margin-left: 1px; border-radius: 16px;" style.background-color="{{data.color}}"></div>
+                                    </td>
+                                    <td> {{data.text}} </td>
+                                    <td> $ {{data.y}} </td>
+                                    <td style="text-align:right;"> {{data.x}} </td>
+                                </tr>
+                            </ng-template>
+                        </ej-grid>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,30 @@
+<div>
+    <div class="row" style="margin-bottom: 16px;">
+        <div class="page-title">
+            <div style="display: inline-block">Dashboard</div>
+            <div class="page-subtitle"><span style="margin-right: 4px;"> - </span> Welcome - {{names}}</div>
+        </div>
+        <div class="col-md-3 col-xs-12 col-xl-6 col-lg-3 daterange overview-range-picker">
+            <ej-daterangepicker #dateRangePicker format='MM/dd/yyyy' [startDate]='app.startDate' [endDate]='app.endDate' [presets]='datePresets' (change)='onDateRangeChange($event)'></ej-daterangepicker>
+        </div>
+    </div>
+    <div>
+        <cards #cards></cards>
+    </div>
+    <div>
+        <pie-chart #pieChart></pie-chart>
+    </div>
+    <div>
+        <div>
+            <div>
+                <line-chart #lineChart></line-chart>
+            </div>
+            <div>
+                <column-chart #columnChart></column-chart>
+            </div>
+        </div>
+    </div>
+    <div>
+        <recent-exp-grid #recentGrid></recent-exp-grid>
+    </div>
+</div>

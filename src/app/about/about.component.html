@@ -1,0 +1,11 @@
+<div>
+    <div class='about-heading'>{{title}}</div>
+    <div class='about-description'>{{description}}</div>
+    <div class='list-heading'>{{listTitle}}</div>
+    <div class='about-component'>
+        <div class='control-item' *ngFor="let item of controlList">
+            <span class="icon-{{item.control | lowercase}} e-sb-icon control-icon"></span>
+            <span class='control-name'>{{item.control}}</span>
+        </div>
+    </div>
+</div>

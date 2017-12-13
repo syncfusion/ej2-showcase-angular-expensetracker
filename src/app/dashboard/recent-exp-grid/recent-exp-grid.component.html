@@ -1,0 +1,63 @@
+<div class="row recent-expense-grid">
+    <div class="col-xs-6 col-sm-6 col-md-12" style="width:100%">
+        <ej-grid #recentExpGrid id="recentexpense-grid" width='100%' [dataSource]='app.dataSource' allowSorting=true enableHover=false allowKeyboard=true [allowPaging]='false' [query]='query' [toolbar]='gridToolbar'>
+            <e-columns>
+                <e-column field='DateTime' headerText='Date' width='120' format="yMd" hideAtMedia='(min-width: 600px)'>
+                    <ng-template #template let-data>
+                        {{data.DateTime | date:'M/d/yyyy'}}
+                    </ng-template>
+                </e-column>
+                <e-column field='Category' headerText='Category' width='170'>
+                    <ng-template #template let-data>
+                        <div class="normalRes">
+                            <div class="category-icon {{data.Category}}"></div>
+                            <div class='category-text'>{{data.Category}}</div>
+                        </div>
+                        <div class="mediumRes">
+                            <div>
+                                <div class="category-icon {{data.Category}}"></div>
+                            </div>
+                            <div>
+                                <div> {{data.Category}} </div>
+                                <div class="description-section"> {{data.Description}} </div>
+                            </div>
+                        </div>
+                        <div class="smallRes">
+                            <div class='sm-category sm-icon'>
+                                <div class="category-icon {{data.Category}}"></div>
+                            </div>
+                            <div class='sm-category category-content'>
+                                <div> {{data.Category}} </div>
+                                <div class="description-section"> {{data.Description}} </div>
+                                <div> {{data.PaymentMode}} </div>
+                            </div>
+                        </div>
+                    </ng-template>
+                </e-column>
+                <e-column field='PaymentMode' headerText='Payment Mode' width='160' hideAtMedia='(min-width: 600px)'></e-column>
+                <e-column field='Description' headerText='Description' hideAtMedia='(min-width: 1050px)'></e-column>
+                <e-column field='Amount' headerText='Amount' width='120' format="C2" textAlign='right'>
+                    <ng-template #template let-data>
+                        <div class="normalRes">
+                            <div class='amt-payment {{data.TransactionType}}'>
+                                <span>$</span> <span>{{data.Amount}}</span>
+                            </div>
+                        </div>
+                        <div class="mediumRes">
+                            <div class='amt-payment {{data.TransactionType}}'>
+                                <span>$</span> <span>{{data.Amount}}</span>
+                            </div>
+                            <div>{{data.DateTime | date:'M/d/yyyy'}}</div>
+                        </div>
+                        <div class="smallRes">
+                            <div class='amt-payment {{data.TransactionType}}'>
+                                <span>$</span> <span>{{data.Amount}}</span>
+                            </div>
+                            <div>{{data.DateTime | date:'M/d/yyyy'}}</div>
+                        </div>
+                    </ng-template>
+                </e-column>
+            </e-columns>
+        </ej-grid>
+    </div>
+</div>

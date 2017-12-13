@@ -1,0 +1,89 @@
+<div class='exp-content-container'>
+    <div>
+        <h1 class="page-title"> {{transactionTitle}} </h1>
+    </div>
+    <div>
+        <div class="col-md-12 margin-top col-lg-12">
+            <div class="expense-grid-container">
+                <div class="expense-head-padding">
+                    <div class="search-wrapper search-section">
+                        <div id="search">
+                            <input #searchInput id="txt" type="search" placeholder="Search" class="search e-input" (keyup)='onInputKeyUpSearch($event)' (focusout)="onSearchClicked()" />
+                            <span id="searchbtn" class="e-search-icon expense-search-icon e-icons" (click)='onSearchClicked()'></span>
+                        </div>
+                        <div class="button-section search-section">
+                            <button id="addexpense" class="e-btn small e-info" (click)='showAddTransactDialog()'>Add Transaction</button>
+                            <button id="filterExpense" class="e-btn small e-info" (click)='showFilterNavigation()'>Filter</button>
+                            <div id="add-btn" class='e-btn' (click)='showAddTransactDialog()'>
+                                <span class='e-icons add-icon add-head-item'></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <ej-grid #transactGrid id='grid' class="margin-top-10 expense-grid-margin pane" height='100%' width='100%' allowPaging='true' allowSelection='true' [dataSource]='app.dataSource' [editSettings]='editSettings' [pageSettings]='pageSettings' [query]='query' [toolbar]='toolbarValue' (created)='onGridCreated()' (actionBegin)='onEditBegin($event)' (actionComplete)='onGridActionComplete($event)' (cellSave)='onGridCellSaved($event)' (checkBoxChange)='onGridCheckBoxStateChanged($event)' (rowSelected)='onGridRowSelected($event)' (rowDeselecting)='onGridRowDeselected($event)'>
+                    <e-columns>
+                        <e-column type='checkbox' width='40'></e-column>
+                        <e-column headerText='Category' width='170' clipMode='ellipsiswithtooltip' editType='dropdownedit' [validationRules]='validateRule'>
+                            <ng-template #template let-data>
+                                <div class="normalRes">
+                                    <div class="category-icon {{data.Category}}"></div>
+                                    <div class='category-text'>{{data.Category}}</div>
+                                </div>
+                                <div class="mediumRes">
+                                    <div>
+                                        <div class="category-icon {{data.Category}}"></div>
+                                    </div>
+                                    <div>
+                                        <div> {{data.Category}} </div>
+                                        <div class="description-section"> {{data.Description}} </div>
+                                    </div>
+                                </div>
+                                <div class="smallRes">
+                                    <div class='sm-category sm-icon'>
+                                        <div class="category-icon {{data.Category}}"></div>
+                                    </div>
+                                    <div class='sm-category category-content'>
+                                        <div> {{data.Category}} </div>
+                                        <div class="description-section"> {{data.Description}} </div>
+                                        <div> {{data.PaymentMode}} </div>
+                                    </div>
+                                </div>
+                            </ng-template>
+                        </e-column>
+                        <e-column field='DateTime' headerText='Date' width='120' format='yMd' editType='datepickeredit' [validationRules]='validateRule' hideAtMedia='(min-width: 1050px)'></e-column>
+                        <e-column field='PaymentMode' headerText='PaymentMode' width='140' editType='dropdownedit' [validationRules]='validateRule' hideAtMedia='(min-width: 600px)'></e-column>
+                        <e-column field='Description' headerText='Description' clipMode='ellipsiswithtooltip' [validationRules]='validateRule' hideAtMedia='(min-width: 1050px)'></e-column>
+                        <e-column field='UniqueId' headerText='Unique Id' isPrimaryKey='true' [visible]='false'></e-column>
+                        <e-column headerText='Amount' width='120' editType='numericedit' format='C2' [validationRules]='validateRule' textAlign='right'>
+                            <ng-template #template let-data>
+                                <div class="normalRes">
+                                    <div class="lg-amount">
+                                        <div class='amt-payment {{data.TransactionType}}'>
+                                            <span>$</span> <span>{{data.Amount}}</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="mediumRes">
+                                    <div class="res-amount">
+                                        <div class='amt-payment {{data.TransactionType}}'>
+                                            <span>$</span> <span>{{data.Amount}}</span>
+                                        </div>
+                                        <div> {{data.DateTime | date:'M/d/yyyy'}} </div>
+                                    </div>
+                                </div>
+                                <div class="smallRes">
+                                    <div class="res-amount">
+                                        <div class='amt-payment {{data.TransactionType}}'>
+                                            <span>$</span> <span>{{data.Amount}}</span>
+                                        </div>
+                                        <div> {{data.DateTime | date:'M/d/yyyy'}} </div>
+                                    </div>
+                                </div>
+                            </ng-template>
+                        </e-column>
+                    </e-columns>
+                </ej-grid>
+            </div>
+        </div>
+    </div>
+</div>
