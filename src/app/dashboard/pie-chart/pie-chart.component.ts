@@ -31,6 +31,7 @@ export class PieChartComponent {
     public enableLegend: boolean = false;
     public pieRenderingData: Object[] = [];
     public animation: Object;
+    public showWaitingPopup:boolean = false;
 
     constructor(public app: AppComponent) {}
 
@@ -144,11 +145,13 @@ export class PieChartComponent {
         //this.pie.refresh();
         //this.lineChart.refresh();
         //this.columnChart.refresh();
+        this.showWaitingPopup = false;
     }
 
     public onGridLoad(args: any): void {
         /** While the legend grid loads, it gets the data from pie chart and process to this */
         this.createLegendData('pie');
+        this.showWaitingPopup = true;
     }
 
     public refreshPieChart(): void {

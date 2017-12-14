@@ -8,15 +8,28 @@
                 </div>
                 <div class="row">
                     <div class="pieChart">
-                        <ej-accumulationchart style='display: block;' #pie id="total-expense" #pie width='100%' height='350px' enableSmartLabels=true [legendSettings]='legendSettings' (textRender)='onTextRender($event)' (animationComplete)='onAnimateCompleted($event)' (loaded)='onChartLoaded($event)'>
+                        <ej-accumulationchart style='display: block;' #pie id="total-expense" #pie width='100%' height='350px' enableSmartLabels=true
+                            [legendSettings]='legendSettings' (textRender)='onTextRender($event)' (animationComplete)='onAnimateCompleted($event)'
+                            (loaded)='onChartLoaded($event)'>
                             <e-accumulation-series-collection>
-                                <e-accumulation-series xName='text' yName='y' startAngle='0' endAngle='360' innerRadius='50%' radius='83%' [groupTo]='groupValue' [palettes]='colorPalettes' [dataLabel]='dataLabel' [dataSource]='pieRenderingData' [animation]='animation'>
-                                </e-accumulation-series>
+                                <e-accumulation-series xName='text' yName='y' startAngle='0' endAngle='360' innerRadius='50%' radius='83%' [groupTo]='groupValue'
+                                    [palettes]='colorPalettes' [dataLabel]='dataLabel' [dataSource]='pieRenderingData' [animation]='animation'>
+                                    </e-accumulation-series>
                             </e-accumulation-series-collection>
-                        </ej-accumulationchart>
+                            </ej-accumulationchart>
                     </div>
-                    <div class="chartLegend" style="margin: 0 auto;">
-                        <ej-grid #legendGrid id="legend-grid" class="legendGrid pane" style="box-shadow: none; min-width: 250px;" width='100%' [dataSource]='pieRenderData' (load)='onGridLoad($event)' (dataBound)='onGridDataBound($event)'>
+                    <div class="chartLegend" style="margin: 0 auto">
+                        <div style="position: relative">
+                            <div class="legend-waitingpopup" [style.display]="showWaitingPopup ? 'block': 'none'">
+                                <span class="legend-image">
+                                    <svg class="e-spin-material" viewBox="0 0 30 30" >
+                                        <path class="e-path-circle" stroke-width="3" d="M15,1.5A13.5,13.5 0 1 1 1.5,15" stroke-dasharray="63.61725123519331" stroke-dashoffset="190.0035236891107" transform="rotate(-90 15 15)"></path>
+                                        </svg>
+                                </span>
+                            </div>
+                        </div>
+                        <ej-grid #legendGrid id="legend-grid" class="legendGrid pane" style="box-shadow: none; min-width: 250px;" width='100%' [dataSource]='pieRenderData'
+                            (load)='onGridLoad($event)' (dataBound)='onGridDataBound($event)'>
                             <e-columns>
                                 <e-column field='color' width='10%' textAlign='center'></e-column>
                                 <e-column field='text' width='50%'></e-column>
@@ -33,7 +46,7 @@
                                     <td style="text-align:right;"> {{data.x}} </td>
                                 </tr>
                             </ng-template>
-                        </ej-grid>
+                            </ej-grid>
                     </div>
                 </div>
             </div>
