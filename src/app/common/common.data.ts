@@ -14080,7 +14080,7 @@ export let expenseData: Object[] = [{
     'FormattedDate': '11/30/2017 02:41 PM'
   }, {
     'UniqueId': 'T101278',
-    'DateTime': new Date(1512053520000),
+    'DateTime': new Date(1512042720000),
     'Category': 'Food',
     'PaymentMode': 'Debit Card',
     'TransactionType': 'Expense',

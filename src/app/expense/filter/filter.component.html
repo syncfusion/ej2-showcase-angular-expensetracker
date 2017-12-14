@@ -30,12 +30,12 @@
                 <div class='amount-filter'>
                     <div class='min-numeric amt-filter'>
                         <label class="inlineAlign minLabel">Min :</label>
-                        <ej-numerictextbox cssClass="inlineAlign" #filterMinAmount width='60px' [showSpinButton]="false" format='n0' floatLabelType='Always' format="c2" [min]="minValue" [value]="minValue" (change)='amountChanged()'></ej-numerictextbox>
+                        <ej-numerictextbox cssClass="inlineAlign" #filterMinAmount width='60px' [showSpinButton]="false" format='c2' [min]="minValue" [value]="minValue" (change)='amountChanged()'></ej-numerictextbox>
                     </div>
                     <span class='amt-filter separateLine'></span>
                     <div class='max-numeric amt-filter'>
                         <label class="inlineAlign maxLabel">Max :</label>
-                        <ej-numerictextbox cssClass="inlineAlign" #filterMaxAmount width='60px' [showSpinButton]="false" format='n0' floatLabelType='Always' format="c2" [min]="maxValue" [value]="maxValue" (change)='amountChanged()'></ej-numerictextbox>
+                        <ej-numerictextbox cssClass="inlineAlign" #filterMaxAmount width='60px' [showSpinButton]="false" format="c2" [min]="maxValue" [value]="maxValue" (change)='amountChanged()' (created)='numericTextBoxCreated()'></ej-numerictextbox>
                     </div>
                 </div>
             </div>

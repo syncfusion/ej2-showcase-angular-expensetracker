@@ -70,6 +70,12 @@ export class FilterComponent implements OnInit {
         });
     }
 
+    public numericTextBoxCreated(): void {
+        let val: IMinMax = <IMinMax> this.filter.minMaxAmount(this.dateRangeFilter.startDate, this.dateRangeFilter.endDate);
+        this.minValue = val.minValue;
+        this.maxValue = val.maxValue;
+    }
+
     /** Updates the Grid datasource based on the modified date range values */
     public dateRangeChanged(args: RangeEventArgs): void {
         this.app.startDate = args.startDate;
@@ -110,6 +116,8 @@ export class FilterComponent implements OnInit {
         this.predicateEnd = new Predicate('DateTime', 'lessthanorequal', end);
         this.predicate = this.predicateStart.and(this.predicateEnd);
         let val: IMinMax = <IMinMax> this.filter.minMaxAmount(start, end);
+        this.minValue = val.minValue;
+        this.maxValue = val.maxValue;
         this.minAmtPredicate = new Predicate('Amount', 'greaterthanorequal', this.minAmtFilter.value);
         this.maxAmtPredicate = new Predicate('Amount', 'lessthanorequal', this.maxAmtFilter.value);
         this.predicate = this.predicate.and(this.minAmtPredicate).and(this.maxAmtPredicate);
