@@ -1,8 +1,8 @@
-import { Component, ViewEncapsulation, OnInit, ViewChild } from '@angular/core';
+import { Component, ViewEncapsulation, OnInit, ViewChild, HostListener } from '@angular/core';
 
 import { GridComponent } from '@syncfusion/ej2-ng-grids';
 import { Query, DataManager } from '@syncfusion/ej2-data';
-import { isNullOrUndefined as isNOU } from '@syncfusion/ej2-base';
+import { isNullOrUndefined as isNOU, Browser } from '@syncfusion/ej2-base';
 import { IAccTextRenderEventArgs, IAccLoadedEventArgs, AccumulationChartComponent,
     IAccAnimationCompleteEventArgs } from '@syncfusion/ej2-ng-charts';
 
@@ -49,6 +49,24 @@ export class PieChartComponent {
         };
         this.getTotalExpense();
         this.animation = { enable: false };
+    }
+
+    public ngAfterViewInit(): void {
+        this.handleDataLabel();
+    }
+
+    @HostListener('window:resize', ['$event'])
+    onResize(event: any): void {
+      /** Pie chart label disable at mobile mode handle at here */
+      this.handleDataLabel();
+    }
+
+    public handleDataLabel(): void {
+        if (Browser.isDevice || window.innerWidth < 400) {
+            this.pie.series[0].dataLabel.visible = false;
+        } else {
+            this.pie.series[0].dataLabel.visible = true;
+        }
     }
 
     /** Sets the pie chart's font size based on its size */
@@ -121,6 +139,8 @@ export class PieChartComponent {
             this.groupValue = (temp.y - 1).toString();
             this.hiGridData = new DataManager(JSON.parse(JSON.stringify(renderingData)))
                 .executeLocal((new Query().sortByDesc('y').skip(9)));
+        } else {
+            this.groupValue = null;
         }
     }
 
@@ -129,7 +149,7 @@ export class PieChartComponent {
             this.pieLegendData = [];
             this.pieLegendData = this.pie.visibleSeries[0].points;
         }
-
+        this.pie.legendSettings.visible = false;
          /** Generates the legend grid data (pieRenderData) */
         this.pieRenderData = [];
         for (let i: number = 0; i < this.pieLegendData.length; i++) {
