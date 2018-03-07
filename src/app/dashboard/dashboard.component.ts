@@ -27,7 +27,6 @@ export class DashBoardComponent implements OnInit {
     @ViewChild('recentGrid') recentGrid: RecentExpGridComponent;
     @ViewChild('dateRangePicker') dateRangePicker: DateRangePickerComponent;
 
-    public names: string;
     public predicate: Predicate;
     public datePresets: Object[];
     public lineChartData: Object[];
@@ -44,7 +43,6 @@ export class DashBoardComponent implements OnInit {
     ) {
         this.common.removeRootClass();
         this.common.addRootClass('dashboard-page');
-        this.names = this.dashService.getName();
     }
 
     public ngOnInit(): void {

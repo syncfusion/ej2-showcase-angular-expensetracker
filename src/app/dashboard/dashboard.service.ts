@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 import { extend } from '@syncfusion/ej2-base';
 
 import { CommonService } from '../common/common.service';
+import { userInfo } from '../common/common.data';
 
 @Injectable()
 export class DashBoardService {
@@ -17,7 +18,7 @@ export class DashBoardService {
     public tempExpenseDS: any = {};
 
     constructor(public common: CommonService) {
-        this.name = 'Nicholas';
+        this.name = userInfo.FirstName;
     }
 
     public getName(): string {

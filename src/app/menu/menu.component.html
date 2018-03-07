@@ -21,7 +21,7 @@
       </div>
     </div>
   </div>
-  <div class="page-list align-center nav-list">
+  <div class="page-list align-center nav-list" (click)='onNavigationClick($event)'>
     <div class='nav-item'>
       <a class="overview ripple-element" id="nav-overview" [routerLink]="['/dashboard']" routerLinkActive="active-link">Dashboard</a>
     </div>

@@ -2,10 +2,9 @@
     <div class="row" style="margin-bottom: 16px;">
         <div class="page-title">
             <div style="display: inline-block">Dashboard</div>
-            <div class="page-subtitle"><span style="margin-right: 4px;"> - </span> Welcome - {{names}}</div>
         </div>
         <div class="col-md-3 col-xs-12 col-xl-6 col-lg-3 daterange overview-range-picker">
-            <ej-daterangepicker #dateRangePicker format='MM/dd/yyyy' [startDate]='app.startDate' [endDate]='app.endDate' [presets]='datePresets' (change)='onDateRangeChange($event)'></ej-daterangepicker>
+            <ejs-daterangepicker #dateRangePicker format='MM/dd/yyyy' [startDate]='app.startDate' [endDate]='app.endDate' [presets]='datePresets' [showClearButton]='false' [readonly]='true' (change)='onDateRangeChange($event)'></ejs-daterangepicker>
         </div>
     </div>
     <div>

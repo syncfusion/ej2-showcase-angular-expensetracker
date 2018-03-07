@@ -1,8 +1,9 @@
 import { Component, Directive, ElementRef } from '@angular/core';
 
-import { Browser, rippleEffect, isNullOrUndefined as isNOU } from '@syncfusion/ej2-base';
+import { Browser, rippleEffect, isNullOrUndefined as isNOU, enableRipple } from '@syncfusion/ej2-base';
 
 import { userInfo } from '../common/common.data';
+enableRipple(true);
 
 @Directive({
   selector: '[routerLinkActive]',
@@ -22,7 +23,7 @@ export class MenuComponent {
 
   constructor(public eleRef: ElementRef) {
     /** Loads the user data in the profile from the sidebar */
-    this.userName = userInfo.Name;
+    this.userName = userInfo.FullName;
     rippleEffect(document.body, { selector: '.ripple-element', rippleFlag: true });
   }
 
@@ -93,6 +94,12 @@ export class MenuComponent {
     } else {
       this.filterMenu.classList.add('filter-open');
       this.enableOverlay();
+    }
+  }
+
+  public onNavigationClick(args: MouseEvent): void {
+    if ((args.target as HTMLElement).nodeName === 'A') {
+        this.handleOverlay();
     }
   }
 }

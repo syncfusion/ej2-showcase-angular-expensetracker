@@ -17,10 +17,10 @@ export class CardsComponent implements OnInit {
     public predicate: Predicate;
     public predicateEnd: Predicate;
     public predicateStart: Predicate;
-    public totalIncome: Number = 0;
-    public totalExpense: Number = 0;
-    public totalBalance: Number = 0;
-    public totalTransactions: Number = 0;
+    public totalIncome: string = '$0';
+    public totalExpense: string = '$0';
+    public totalBalance: string = '$0';
+    public totalTransactions: string = '0';
 
     constructor(public common: CommonService, public app: AppComponent) {}
 
@@ -33,7 +33,6 @@ export class CardsComponent implements OnInit {
     public updateCardValues(): void {
         let predicate: Predicate = this.common.getPredicate(this.app.startDate, this.app.endDate);
         let intl: Internationalization = new Internationalization();
-        let nFormatter: Function = intl.getNumberFormat({ skeleton: 'C3', currency: 'USD' });
         let incomeRS: number = 0;
         let expenseRS: number = 0;
         let incomeD: any;
@@ -47,7 +46,7 @@ export class CardsComponent implements OnInit {
             for (let i: number = 0; i < incomeD.length; i++) {
                 incomeRS += parseInt(incomeD[i].Amount, 0);
             }
-            this.totalIncome = (incomeRS ? nFormatter(incomeRS) : nFormatter(0));
+            this.totalIncome = this.common.getCurrencyVal(incomeRS ? incomeRS : 0);
         });
 
         /** Calulates total expenses and sets to the Expenses card */
@@ -58,16 +57,16 @@ export class CardsComponent implements OnInit {
                 for (let i: number = 0; i < expenseD.length; i++) {
                     expenseRS += parseInt(expenseD[i].Amount, 0);
                 }
-                this.totalExpense = (expenseRS ? nFormatter(expenseRS) : nFormatter(0));
-                document.getElementById('current-balance').textContent = '$ ' + nFormatter(incomeRS - expenseRS);
+                this.totalExpense = this.common.getCurrencyVal(expenseRS ? expenseRS : 0);
+                document.getElementById('current-balance').textContent = this.common.getCurrencyVal(incomeRS - expenseRS);
 
                 /** Based on the Income and Expense, calulates the balance and sets to the Balance card */
-                this.totalBalance = nFormatter(incomeRS - expenseRS);
+                this.totalBalance = this.common.getCurrencyVal(incomeRS - expenseRS);
             });
 
         /** Calulates total transactions and sets to the Transactions card */
         let transaction: any = new DataManager(<JSON[]>this.app.dataSource)
             .executeLocal((new Query().where(predicate)));
-        this.totalTransactions = transaction.length;
+        this.totalTransactions = this.common.getNumberVal(transaction.length);
     }
 }

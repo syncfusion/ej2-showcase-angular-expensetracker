@@ -38,26 +38,26 @@ export class LineChartComponent implements OnInit {
         this.primaryYAxis = {
             maximum: 1800,
             interval: 300,
-            labelFormat: '{value}'
+            labelFormat: 'c0'
         };
         this.tooltip = {
             fill: '#707070',
             enable: true,
             shared: true,
-            format: '${series.name} : $ ${point.y}',
+            format: '${series.name} : ${point.y}',
             header: 'Month - ${point.x} '
         };
         this.chartArea = {
             border: { width: 0 }
         };
         this.margin = { top: 90 };
-        this.lBorder = { width: 0.5, color: '#4d80f3' };
+        this.lBorder = { width: 0.5, color: '#0470D8' };
         this.marker = {
             visible: true,
             width: 10,
             height: 10,
             fill: 'white',
-            border: { width: 2, color: '#4d80f3' },
+            border: { width: 2, color: '#0470D8' },
         };
         this.animation = { enable: false };
     }

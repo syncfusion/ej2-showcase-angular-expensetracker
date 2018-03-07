@@ -31,7 +31,7 @@ export class PieChartComponent {
     public enableLegend: boolean = false;
     public pieRenderingData: Object[] = [];
     public animation: Object;
-    public showWaitingPopup:boolean = false;
+    public showWaitingPopup: boolean = false;
 
     constructor(public app: AppComponent) {}
 
@@ -39,13 +39,12 @@ export class PieChartComponent {
 
         /** Configurations for the Pie chart component */
         this.legendSettings = { visible: true };
-        this.colorPalettes = ['#6890fb', '#04cd93', '#ffd203', '#ff5e65', '#e385f9', '#f3791c', '#2a99f7',
-            '#757575', '#1dc340', '#9fa8da', '#fc7c00', '#c0ca33', '#006064', '#4527a0', ' #0e82ff',
-            '#9fa8da', '#e385f9', '#faf942', '#6a1b9a'];
+        this.colorPalettes = ['#61EFCD', '#CDDE1F', '#FEC200', '#CA765A', '#2485FA', '#F57D7D', '#C152D2', '#8854D9', '#3D4EB8',
+         '#00BCD7'];
         this.dataLabel = {
             name: 'x', visible: true,
             position: 'Outside', connectorStyle: { length: '10%' },
-            font: { color: 'Black', size: '14px' }
+            font: { color: 'Black', size: '14px', fontFamily: 'Roboto' }
         };
         this.getTotalExpense();
         this.animation = { enable: false };

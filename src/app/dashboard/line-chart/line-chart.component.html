@@ -1,12 +1,12 @@
 <div class="col-xs-12 col-sm-6 col-md-6 chart-container">
     <div class="chart-padding">
-        <ej-chart style='display:block' #lineChart id='balance' class='line-chart' style="width:100%; max-width: 494px;" [primaryXAxis]='primaryXAxis' [primaryYAxis]='primaryYAxis' [chartArea]='chartArea' [margin]='margin' [tooltip]='tooltip'>
+        <ejs-chart style='display:block' #lineChart id='balance' class='line-chart' style="width:100%; max-width: 494px;" [primaryXAxis]='primaryXAxis' [primaryYAxis]='primaryYAxis' [chartArea]='chartArea' [margin]='margin' useGroupingSeparator='true' [tooltip]='tooltip'>
             <e-annotations>
                 <e-annotation x='75px' y='9%' coordinateUnits='Pixel' region='Chart' content='<p style="font-family:Roboto;font-size: 16px;font-weight: 400;font-weight: 400;letter-spacing: 0.02em;line-height: 16px;color: #797979 !important;">Account - Balance</p>'></e-annotation>
             </e-annotations>
             <e-series-collection>
-                <e-series type='Area' fill='rgba(77, 128, 243, 0.3)' xName='DateTime' yName='Amount' width=2 name='Amount' [dataSource]='dashBoard.lineChartData' [marker]='marker' [border]='lBorder' [animation]='animation'> </e-series>
+                <e-series type='Area' fill='rgba(4, 112, 216, 0.3)' xName='DateTime' yName='Amount' width=2 name='Amount' [dataSource]='dashBoard.lineChartData' [marker]='marker' [border]='lBorder' [animation]='animation'> </e-series>
             </e-series-collection>
-        </ej-chart>
+        </ejs-chart>
     </div>
 </div>

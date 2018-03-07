@@ -43,6 +43,7 @@ export class FilterComponent implements OnInit {
     public creditPredicate: Predicate;
     public expensePredicate: Predicate;
     public categoryPredicate: Predicate;
+    public categoryPredicates: Predicate;
 
     constructor(
         public app: AppComponent,
@@ -172,11 +173,12 @@ export class FilterComponent implements OnInit {
             for (let i: number = 0; i < list.length; i++) {
                 this.categoryPredicate = new Predicate('Category', 'equal', list[i]);
                 if (i === 0) {
-                    this.predicate = this.predicate.and(this.categoryPredicate);
+                    this.categoryPredicates = this.categoryPredicate;
                 } else {
-                    this.predicate = this.predicate.or(this.categoryPredicate);
+                    this.categoryPredicates = this.categoryPredicates.or(this.categoryPredicate);
                 }
             }
+            this.predicate = this.predicate.and(this.categoryPredicates);
         }
         this.cntCompObj.grid.setProperties({
             dataSource: this.app.dataSource,

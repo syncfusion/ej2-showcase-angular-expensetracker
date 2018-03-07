@@ -2,6 +2,7 @@ import { Component, ViewEncapsulation, OnInit, ElementRef, ViewChild } from '@an
 
 import { KeyboardEventArgs } from '@syncfusion/ej2-base';
 import { Query, DataManager, Predicate } from '@syncfusion/ej2-data';
+import { Input } from '@syncfusion/ej2-inputs';
 import { GridComponent, RowSelectEventArgs, RowDeselectEventArgs, CheckBoxChangeEventArgs,
     PageService, EditService, CommandColumnService, ToolbarService, ContextMenuService,
     ResizeService } from '@syncfusion/ej2-ng-grids';
@@ -34,6 +35,7 @@ export class ContentComponent implements OnInit {
     public transactionTitle: string;
     public predicateStart: Predicate;
     public searchInput: HTMLInputElement;
+    public clearIcon: HTMLElement;
 
     constructor(
         public app: AppComponent,
@@ -47,7 +49,7 @@ export class ContentComponent implements OnInit {
         this.predicateStart = new Predicate('DateTime', 'greaterthanorequal', this.app.startDate);
         this.predicateEnd = new Predicate('DateTime', 'lessthanorequal', this.app.endDate);
         this.predicate = this.predicateStart.and(this.predicateEnd);
-        this.toolbarValue = ['edit', 'delete'];
+        this.toolbarValue = ['Edit', 'Delete'];
         this.query = new Query().where(this.predicate).sortByDesc('DateTime');
         this.pageSettings = { pageSize: 11 };
         this.validateRule = { required: true };
@@ -56,6 +58,16 @@ export class ContentComponent implements OnInit {
 
     public ngAfterViewInit(): void {
         this.searchInput = this.eleRef.nativeElement.querySelector('#txt');
+        Input.createInput({
+            element: this.searchInput,
+            properties: {
+                showClearButton: true
+            }
+        });
+        this.clearIcon = this.eleRef.nativeElement.querySelector('.e-clear-icon');
+        this.clearIcon.onmousedown = () => {
+            this.searchInput.value = '';
+        };
     }
 
     public onGridCreated(): void {
@@ -74,10 +86,6 @@ export class ContentComponent implements OnInit {
         new DataManager(<JSON[]> this.app.dataSource).update('UniqueId', args.rowData);
     }
 
-    /** Based on the Grid row selection, handles the visibility of Edit and Delete button's visibility  */
-    public onGridCheckBoxStateChanged(args: CheckBoxChangeEventArgs): void {
-        this.handleToolbarVisibility();
-    }
     public onGridRowSelected(args: RowSelectEventArgs): void {
         this.handleToolbarVisibility();
     }
@@ -95,6 +103,9 @@ export class ContentComponent implements OnInit {
 
     public showEditTransactDialog(): void {
         this.dlgCompObj.showEditDialog();
+        setTimeout(() => {
+            this.grid.toolbarModule.toolbar.enableItems(document.getElementById('grid_delete').parentElement, true);
+        }, 0);
     }
 
     public showFilterNavigation(): void {

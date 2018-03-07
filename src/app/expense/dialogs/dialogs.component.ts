@@ -112,11 +112,11 @@ export class DialogsComponent implements OnInit {
                 this.cntCompObj.grid.refresh();
                 this.cards.updateCardValues();
                 this.alertDialog.hide();
-            }), buttonModel: { content: 'Yes', cssClass: 'e-flat' }
+            }), buttonModel: { content: 'Yes', cssClass: 'e-ok e-flat', isPrimary: true }
         }, {
             click: (() => {
                 this.alertDialog.hide();
-            }), buttonModel: { cssClass: 'e-flat', content: 'No' }
+            }), buttonModel: { cssClass: 'e-no e-flat', content: 'No' }
         }];
 
         /** Functionalities for the buttons of "Edit Dialog" window */

@@ -1,3 +1,4 @@
+//sass-lint:disable-all
 $accent: #4273F9;
 $gradient-start-color: #6890FB;
 $gradient-end-color: $accent;
@@ -6,7 +7,6 @@ $gradient-danger-end-color: #FA453C;
 $shadow-start-color: rgba(0,0,0,0.20);
 $shadow-active-color: rgba(66,115,249,0.85);
 
-//sass-lint:disable-all
 .dashboard-page,
 .about-page {
   #filter-toggle {
@@ -19,14 +19,33 @@ $shadow-active-color: rgba(66,115,249,0.85);
     display: block;
   }
 }
-
+#grid .e-toolbar {
+    .e-tbar-btn{
+         .e-tbar-btn-text {
+                cursor:pointer;
+                padding: 0px 4px;
+          }
+    }
+}
+#grid .e-toolbar {
+  .e-toolbar-items {
+    .e-toolbar-item {
+      .e-tbar-btn:hover {        
+        background: rgba(0, 0, 0, 0.12);
+        border-color: rgba(0, 0, 0, 0.12);
+        color: rgba(0, 0, 0, 0.87);
+      }
+    }
+  }
+}
 .e-btn.e-info.e-add,
-.e-btn.e-info.e-save {
+.e-btn.e-info.e-save,.e-btn.e-ok.e-flat {
   background-image: linear-gradient(-180deg, $gradient-start-color 0%, $gradient-end-color 100%) !important;
   border: 0;
   font-size: 13px;
   color: #FFFFFF;
   font-family: Roboto-Regular;
+  height: 26px;
 
   &:hover {
     background-image: linear-gradient(-180deg, $gradient-start-color 0%, $gradient-end-color 100%);
@@ -47,7 +66,7 @@ $shadow-active-color: rgba(66,115,249,0.85);
   }
 }
 
-.e-btn.e-outline.e-cancel {
+.e-btn.e-outline.e-cancel,.e-btn.e-no.e-flat {
   background: #fff;
   border: 1px solid #4273f9;
   font-family: Roboto Regular;
@@ -184,17 +203,17 @@ $shadow-active-color: rgba(66,115,249,0.85);
 
 .e-dialog {
 
+  &#confirmDialog .e-dlg-content {
+    padding: 0 24px 18px 24px;
+  }
+
   .e-dlg-header-content {
     border-bottom: none;
     padding: 24px 24px 0 24px;
   }
-}
 
-.expense-page {
-  #confirmDialog.e-dialog {
-    .e-footer-content {
-      padding: 8px;
-    }
+  .e-footer-content {
+      padding: 0 24px 24px;
   }
 }
 
@@ -228,7 +247,7 @@ $shadow-active-color: rgba(66,115,249,0.85);
 }
 
 .e-daterangepicker.e-popup {
-     z-index: 1000050;
+     z-index: 1000050 !important;
 }
 
 .e-icon {
@@ -508,18 +527,33 @@ html {
 }
 
 #search {
-    display: inline-flex;
-    width: 100%;
-    height: 38px;
+  display: inline-flex;
+  width: 100%;
+  height: 38px;
+
+  .e-input-group {
+    background: #fff;
+    border: none;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.1);
+
+    input.search {
+      font-size: 15px;
+      text-indent: 35px;
+    }
+
+    .e-clear-icon {
+      padding: 10px;
+    }
+
+    &::before, &::after {
+        display: none;
+    }
+  }
 }
 
 .searchtxt::-ms-clear {
     display: none; 
-}
-
-input.search {
-    font-size: 15px;
-    text-indent: 19px;
 }
 
 #grid {
@@ -533,6 +567,7 @@ input.search {
     .e-toolbar-items {
       background: $white;
       float:right;
+      margin: 0;
 
       .e-btn {
         background: $white;
@@ -541,9 +576,9 @@ input.search {
   }
 }
 
-.expense-search-icon{
+.expense-search-icon {
     position: absolute;
-    margin: 10px 6px 2px;
+    margin: 10px;
     font-size: 15px;
     color: black;
     opacity: .6;
@@ -788,7 +823,7 @@ input.search {
 .e-datepicker.e-popup-wrapper,
 .e-timepicker.e-popup,
 .e-ddl.e-popup {
-    z-index: 10000001;
+    z-index: 10000001 !important;
 }
 
 .navbar {
@@ -1071,10 +1106,13 @@ span.e-label {
 }
 .label-font{
     font-family: "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
-    padding-top: 32px;
-    padding-bottom: 16px;
+    padding: 35px 0 10px 0;
+    margin: 0;
     color: #759df5;
     width: 100%;
+    &.bottom-align {
+        padding-bottom: 16px;
+    }
 }
 
 .padding-bottom-10{
@@ -1268,6 +1306,9 @@ span.e-label {
 
 .expense-filter-container {
     padding: 0 10px 10px 10px;
+    & > .label-font:first-child {
+        padding-top: 16px;
+    }
 }
 
 
@@ -1754,13 +1795,17 @@ column-chart {
     }
 }
 
-.e-checkbox-wrapper .e-frame {
+.e-grid .e-gridheader .e-headercell .e-headercelldiv.e-headerchkcelldiv {
+    padding-left: 0.5em;
+}
+
+.e-checkbox-wrapper .e-frame, .e-css.e-checkbox-wrapper .e-frame {
     line-height: 8px;
     height: 16px;
     width: 16px;
 }
 
-.e-checkbox-wrapper .e-check {
+.e-checkbox-wrapper .e-check, .e-css.e-checkbox-wrapper .e-check {
     font-size: 10px;
 }
 
@@ -1769,21 +1814,6 @@ column-chart {
 }
 .slider-container {
     margin: 0 10px;
-}
-
-.label-font:first-child {
-    padding-top: 16px;
-}
-
-.label-font.bottom-align {
-    padding-bottom: 20px;
-}
-
-.expense-page .search {
-    background: #fff;
-    border: none;
-    border-radius: 4px;
-    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.1);
 }
 
 .search-wrapper {
@@ -1799,7 +1829,6 @@ column-chart {
 #filterExpense.e-btn,
 #filter-btn.e-btn {
     height: 34px;
-    line-height: 29px;
 }
 
 .e-btn.e-info,
@@ -1844,10 +1873,6 @@ input[type="search"].search::-moz-placeholder {
     color: #9d9d9d;
 }
 
-input.search{
-    text-indent: 30px;
-}
-
 .e-grid .e-gridheader {
     border-bottom: none;
 }
@@ -1869,6 +1894,16 @@ input.search{
 
 #download-btn {
     width: auto;
+    height: 27px;
+    line-height: 25px;
+    padding: 0 12px;
+
+    a {
+        color: #fff;
+        &:hover {
+            text-decoration: none;
+        }
+    }
 }
 
 .about-heading {
@@ -2105,9 +2140,8 @@ body.about-page {
 
 #add-btn {
     width: 36px;
-    padding: 0;
+    padding: 10px 0;
     height: 34px;
-    padding-top: 6px;
 
     span {
         margin: 0;
@@ -2182,11 +2216,18 @@ body.about-page {
 }
 
 .min-numeric {
-    padding-right: 11px;
+    padding-right: 7px;
 }
 
 .max-numeric {
-    margin-left: 9px;
+    margin-left: 7px;
+}
+
+.e-input-group .e-input-group-icon {
+
+  &.e-date-icon, &.e-range-icon {
+    font-size: 16px;
+  }
 }
 
 @media (min-width: 1400px) {
@@ -2283,6 +2324,7 @@ body.about-page {
     background-image: url(./images/no-records.png);
     background-repeat: no-repeat;
     background-position: center;
+    width: 100%;
 }
 
 .amt-payment.Income {
@@ -2321,7 +2363,7 @@ body.about-page {
     #editExpenseDialog {
         width: 90% !important;
         height: 90% !important;
-        max-height: 483px !important;
+        max-height: 510px !important;
         max-width: 483px !important;
     }
 }
@@ -2331,10 +2373,9 @@ body.about-page {
     #editExpenseDialog {
         width: 70% !important;
         height: 90% !important;
-        max-height: 483px !important;
-        max-width: 483px !important;
-        max-width: 550px;
-        min-width: 550px;
+        max-height: 510px !important;
+        max-width: 550px !important;
+        min-width: 500px;
     }
 }
 
@@ -2474,7 +2515,7 @@ body.about-page {
 #alertDialog .alertDlgContent {
     padding: 0 20px;
 }
-.e-grid tr {
+#recentexpense-grid.e-grid tr, #grid.e-grid tr {
     cursor: pointer;
 }
 #category_popup.e-ddl.e-popup {

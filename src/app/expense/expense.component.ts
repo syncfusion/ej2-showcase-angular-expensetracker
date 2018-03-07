@@ -29,17 +29,6 @@ export class ExpenseComponent implements OnInit {
         this.common.addRootClass('expense-page');
     }
 
-    @HostListener('window:scroll', ['$event'])
-    onScrollEvent($event: any): void {
-        if (!Browser.isDevice) {
-            this.dialogObj.dlgTimePicker.hide();
-            this.filterObj.dateRangeFilter.hide();
-            this.filterObj.multiSelectFilter.hidePopup();
-            this.dialogObj.dlgDatePicker.hide();
-            this.dialogObj.dlgDropDown.hidePopup();
-        }
-    }
-
     public ngOnInit(): void {
         /** On initial load, update the sidebar selections and overlay */
         this.menu.removeToggleClass();

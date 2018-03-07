@@ -7,35 +7,35 @@
         <div class="expense-filter-container">
             <label class="label-font">Select a range</label>
             <div class='filter-item'>
-                <ej-daterangepicker #filterDateRange class="DateTime" format='MM/dd/yyyy' cssClass='DateTime' [startDate]='app.startDate' [endDate]='app.endDate' (change)='dateRangeChanged($event)'></ej-daterangepicker>
+                <ejs-daterangepicker #filterDateRange class="DateTime" format='MM/dd/yyyy' cssClass='DateTime' [startDate]='app.startDate' [endDate]='app.endDate' [showClearButton]='false' [readonly]='true' (change)='dateRangeChanged($event)'></ejs-daterangepicker>
             </div>
             <label class="label-font">Category</label>
             <div class="treeview filter-item">
-                <ej-multiselect #filterMultiSelect [dataSource]='filterCategory' mode='box' placeholder='Select Categories' hideSelectedItem='true' closePopupOnSelect='false' (select)='categorySelected($event)' (removed)='categoryRemoved($event)'> </ej-multiselect>
+                <ejs-multiselect #filterMultiSelect [dataSource]='filterCategory' mode='Box' placeholder='Select Categories' hideSelectedItem='true' closePopupOnSelect='false' (select)='categorySelected($event)' (removed)='categoryRemoved($event)'> </ejs-multiselect>
             </div>
             <label class="label-font bottom-align">Cashflow</label>
             <div class="cashflow filter-item">
-                <ej-checkbox #filterIncome id="income" class="cashflow-section" [checked]="true" label="Income" cssClass='TransactionType' (change)='checkBoxStateChanged($event)'></ej-checkbox>
-                <ej-checkbox #filterExpense id="expenses" class="cashflow-section" [checked]="true" label="Expense" cssClass='TransactionType' (change)='checkBoxStateChanged($event)'></ej-checkbox>
+                <ejs-checkbox #filterIncome id="income" class="cashflow-section" [checked]="true" label="Income" cssClass='TransactionType' (change)='checkBoxStateChanged($event)'></ejs-checkbox>
+                <ejs-checkbox #filterExpense id="expenses" class="cashflow-section" [checked]="true" label="Expense" cssClass='TransactionType' (change)='checkBoxStateChanged($event)'></ejs-checkbox>
             </div>
-            <label class="label-font bottom-align">Payment mode</label>
+            <label class="label-font bottom-align">Payment Mode</label>
             <div class="paymentModes filter-item">
-                <ej-checkbox #filterCash id="cash" label="Cash" class="cashflow-section" cssClass='PaymentMode' [checked]="true" (change)='checkBoxStateChanged($event)'></ej-checkbox>
-                <ej-checkbox #filterDebit id="debitcard" class="cashflow-section" label="Debit Card" cssClass='PaymentMode' [checked]="true" (change)='checkBoxStateChanged($event)'></ej-checkbox>
+                <ejs-checkbox #filterCash id="cash" label="Cash" class="cashflow-section" cssClass='PaymentMode' [checked]="true" (change)='checkBoxStateChanged($event)'></ejs-checkbox>
+                <ejs-checkbox #filterDebit id="debitcard" class="cashflow-section" label="Debit Card" cssClass='PaymentMode' [checked]="true" (change)='checkBoxStateChanged($event)'></ejs-checkbox>
                 <br/><br/>
-                <ej-checkbox #filterCredit id="creditcard" class="cashflow-section" label="Credit Card" [checked]="true" cssClass='PaymentMode' (change)='checkBoxStateChanged($event)'></ej-checkbox>
+                <ejs-checkbox #filterCredit id="creditcard" class="cashflow-section" label="Credit Card" [checked]="true" cssClass='PaymentMode' (change)='checkBoxStateChanged($event)'></ejs-checkbox>
             </div>
             <div>
                 <label class="label-font">Amount</label>
                 <div class='amount-filter'>
                     <div class='min-numeric amt-filter'>
                         <label class="inlineAlign minLabel">Min :</label>
-                        <ej-numerictextbox cssClass="inlineAlign" #filterMinAmount width='60px' [showSpinButton]="false" format='c2' [min]="minValue" [value]="minValue" (change)='amountChanged()'></ej-numerictextbox>
+                        <ejs-numerictextbox cssClass="inlineAlign" #filterMinAmount width='55px' [showSpinButton]="false" format='c0' [min]="minValue" [value]="minValue" (change)='amountChanged()'></ejs-numerictextbox>
                     </div>
                     <span class='amt-filter separateLine'></span>
                     <div class='max-numeric amt-filter'>
                         <label class="inlineAlign maxLabel">Max :</label>
-                        <ej-numerictextbox cssClass="inlineAlign" #filterMaxAmount width='60px' [showSpinButton]="false" format="c2" [min]="maxValue" [value]="maxValue" (change)='amountChanged()' (created)='numericTextBoxCreated()'></ej-numerictextbox>
+                        <ejs-numerictextbox cssClass="inlineAlign" #filterMaxAmount width='60px' [showSpinButton]="false" format="c0" [min]="maxValue" [value]="maxValue" (change)='amountChanged()' (created)='numericTextBoxCreated()'></ejs-numerictextbox>
                     </div>
                 </div>
             </div>

@@ -20,10 +20,10 @@
                         </div>
                     </div>
                 </div>
-                <ej-grid #transactGrid id='grid' class="margin-top-10 expense-grid-margin pane" height='100%' width='100%' allowPaging='true' allowSelection='true' [dataSource]='app.dataSource' [editSettings]='editSettings' [pageSettings]='pageSettings' [query]='query' [toolbar]='toolbarValue' (created)='onGridCreated()' (actionBegin)='onEditBegin($event)' (actionComplete)='onGridActionComplete($event)' (cellSave)='onGridCellSaved($event)' (checkBoxChange)='onGridCheckBoxStateChanged($event)' (rowSelected)='onGridRowSelected($event)' (rowDeselecting)='onGridRowDeselected($event)'>
+                <ejs-grid #transactGrid id='grid' class="margin-top-10 expense-grid-margin pane" height='100%' width='100%' allowPaging='true' allowSelection='true' [dataSource]='app.dataSource' [editSettings]='editSettings' [pageSettings]='pageSettings' [query]='query' [toolbar]='toolbarValue' (created)='onGridCreated()' (actionBegin)='onEditBegin($event)' (actionComplete)='onGridActionComplete($event)' (cellSave)='onGridCellSaved($event)' (rowSelected)='onGridRowSelected($event)' (rowDeselected)='onGridRowDeselected($event)'>
                     <e-columns>
                         <e-column type='checkbox' width='40'></e-column>
-                        <e-column headerText='Category' width='170' clipMode='ellipsiswithtooltip' editType='dropdownedit' [validationRules]='validateRule'>
+                        <e-column headerText='Category' width='178' clipMode='ellipsiswithtooltip' editType='dropdownedit' [validationRules]='validateRule'>
                             <ng-template #template let-data>
                                 <div class="normalRes">
                                     <div class="category-icon {{data.Category}}"></div>
@@ -50,23 +50,23 @@
                                 </div>
                             </ng-template>
                         </e-column>
-                        <e-column field='DateTime' headerText='Date' width='120' format='yMd' editType='datepickeredit' [validationRules]='validateRule' hideAtMedia='(min-width: 1050px)'></e-column>
-                        <e-column field='PaymentMode' headerText='PaymentMode' width='140' editType='dropdownedit' [validationRules]='validateRule' hideAtMedia='(min-width: 600px)'></e-column>
-                        <e-column field='Description' headerText='Description' clipMode='ellipsiswithtooltip' [validationRules]='validateRule' hideAtMedia='(min-width: 1050px)'></e-column>
+                        <e-column field='DateTime' headerText='Date' width='112' format='yMd' editType='datepickeredit' [validationRules]='validateRule' hideAtMedia='(min-width: 1050px)'></e-column>
+                        <e-column field='PaymentMode' headerText='Payment Mode' width='140' editType='dropdownedit' [validationRules]='validateRule' hideAtMedia='(min-width: 600px)'></e-column>
+                        <e-column field='Description' headerText='Description' clipMode='ellipsis' [validationRules]='validateRule' hideAtMedia='(min-width: 1050px)'></e-column>
                         <e-column field='UniqueId' headerText='Unique Id' isPrimaryKey='true' [visible]='false'></e-column>
                         <e-column headerText='Amount' width='120' editType='numericedit' format='C2' [validationRules]='validateRule' textAlign='right'>
                             <ng-template #template let-data>
                                 <div class="normalRes">
                                     <div class="lg-amount">
                                         <div class='amt-payment {{data.TransactionType}}'>
-                                            <span>$</span> <span>{{data.Amount}}</span>
+                                            <span>{{data.Amount | currency:'USD'}}</span>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="mediumRes">
                                     <div class="res-amount">
                                         <div class='amt-payment {{data.TransactionType}}'>
-                                            <span>$</span> <span>{{data.Amount}}</span>
+                                            <span>{{data.Amount | currency:'USD'}}</span>
                                         </div>
                                         <div> {{data.DateTime | date:'M/d/yyyy'}} </div>
                                     </div>
@@ -74,7 +74,7 @@
                                 <div class="smallRes">
                                     <div class="res-amount">
                                         <div class='amt-payment {{data.TransactionType}}'>
-                                            <span>$</span> <span>{{data.Amount}}</span>
+                                            <span>{{data.Amount | currency:'USD'}}</span>
                                         </div>
                                         <div> {{data.DateTime | date:'M/d/yyyy'}} </div>
                                     </div>
@@ -82,7 +82,7 @@
                             </ng-template>
                         </e-column>
                     </e-columns>
-                </ej-grid>
+                </ejs-grid>
             </div>
         </div>
     </div>

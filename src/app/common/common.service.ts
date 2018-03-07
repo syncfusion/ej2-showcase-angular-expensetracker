@@ -1,6 +1,6 @@
 import { Injectable, ViewChild } from '@angular/core';
 
-import { extend } from '@syncfusion/ej2-base';
+import { extend, Internationalization } from '@syncfusion/ej2-base';
 import { Predicate } from '@syncfusion/ej2-data';
 
 import { expenseData } from '../common/common.data';
@@ -10,6 +10,7 @@ export class CommonService {
   public predicateStart: Predicate;
   public predicateEnd: Predicate;
   public predicate: Predicate;
+  public intl: Internationalization = new Internationalization();
 
   constructor() {}
 
@@ -41,4 +42,16 @@ export class CommonService {
     }
     return result;
   }
+
+    public getDate(value: Date): string {
+        return this.intl.formatDate(value, { skeleton: 'yMd', type: 'date' });
+    }
+
+    public getCurrencyVal(value: number): string {
+        return this.intl.formatNumber(value, { format: 'C0' });
+    }
+
+    public getNumberVal(value: number): string {
+        return this.intl.getNumberFormat({ skeleton: 'C0', currency: 'USD' })(value);
+    }
 }

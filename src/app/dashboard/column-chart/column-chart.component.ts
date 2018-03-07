@@ -40,7 +40,7 @@ export class ColumnChartComponent implements OnInit {
         this.primaryYAxis = {
             minimum: 3000,
             maximum: 9000,
-            labelFormat: '{value}'
+            labelFormat: 'c0'
         };
         this.titleStyle = { textAlignment: 'Near', fontWeight: '500', size: '16', color: '#000' };
         this.legendSettings = { visible: true };
@@ -48,12 +48,12 @@ export class ColumnChartComponent implements OnInit {
             fill: '#707070',
             enable: true,
             shared: true,
-            format: '${series.name} : $ ${point.y}',
+            format: '${series.name} : ${point.y}',
             header: 'Month - ${point.x} ',
         };
         this.marker = { visible: true, height: 10, width: 10 };
         this.margin = { top: 90 };
-        this.cBorder = { width: 0.5, color: '#64e669' };
+        this.cBorder = { width: 0.5, color: '#A16EE5' };
         this.animation = { enable: false };
     }
 
