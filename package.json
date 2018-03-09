@@ -45,7 +45,6 @@
         "run-sequence": "2.2.0",
         "webpack-stream": "^3.2.0",
         "karma-systemjs": "^0.16.0",
-        "gulp-typescript": "^2.13.0",
         "systemjs-plugin-babel": "0.0.17"
     },
     "keywords": [
