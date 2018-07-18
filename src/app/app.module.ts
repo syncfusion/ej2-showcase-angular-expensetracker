@@ -7,7 +7,7 @@ import { NumericTextBoxAllModule } from '@syncfusion/ej2-ng-inputs';
 import { CheckBoxAllModule, RadioButtonAllModule } from '@syncfusion/ej2-ng-buttons';
 import { ChartAllModule, AccumulationChartAllModule } from '@syncfusion/ej2-ng-charts';
 import { MultiSelectAllModule, DropDownListAllModule } from '@syncfusion/ej2-ng-dropdowns';
-import { DialogAllModule, TooltipAllModule, PopupAllModule } from '@syncfusion/ej2-ng-popups';
+import { DialogAllModule, TooltipAllModule } from '@syncfusion/ej2-ng-popups';
 import { DateRangePickerModule, DateRangePickerAllModule, DatePickerAllModule, TimePickerAllModule } from '@syncfusion/ej2-ng-calendars';
 
 import { routing } from './app.router';
