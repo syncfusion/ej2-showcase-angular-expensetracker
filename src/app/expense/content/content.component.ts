@@ -5,7 +5,7 @@ import { Query, DataManager, Predicate } from '@syncfusion/ej2-data';
 import { Input } from '@syncfusion/ej2-inputs';
 import { GridComponent, RowSelectEventArgs, RowDeselectEventArgs, CheckBoxChangeEventArgs,
     PageService, EditService, CommandColumnService, ToolbarService, ContextMenuService,
-    ResizeService } from '@syncfusion/ej2-ng-grids';
+    ResizeService } from '@syncfusion/ej2-angular-grids';
 
 import { AppComponent } from '../../app.component';
 import { MenuComponent } from '../../menu/menu.component';

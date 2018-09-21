@@ -1,6 +1,6 @@
 import { Component, ViewEncapsulation, OnInit, ViewChild } from '@angular/core';
 
-import { ChartComponent } from '@syncfusion/ej2-ng-charts';
+import { ChartComponent } from '@syncfusion/ej2-angular-charts';
 
 import { DashBoardComponent } from '../dashboard.component';
 

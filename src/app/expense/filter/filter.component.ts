@@ -2,9 +2,9 @@ import { Component, ViewEncapsulation, ViewChild, OnInit } from '@angular/core';
 
 import { Query, Predicate } from '@syncfusion/ej2-data';
 import { isNullOrUndefined as isNOU } from '@syncfusion/ej2-base';
-import { CheckBoxComponent, ChangeEventArgs } from '@syncfusion/ej2-ng-buttons';
-import { DateRangePickerComponent, RangeEventArgs } from '@syncfusion/ej2-ng-calendars';
-import { MultiSelectComponent, SelectEventArgs, RemoveEventArgs } from '@syncfusion/ej2-ng-dropdowns';
+import { CheckBoxComponent, ChangeEventArgs } from '@syncfusion/ej2-angular-buttons';
+import { DateRangePickerComponent, RangeEventArgs } from '@syncfusion/ej2-angular-calendars';
+import { MultiSelectComponent, SelectEventArgs, RemoveEventArgs } from '@syncfusion/ej2-angular-dropdowns';
 
 import { AppComponent } from '../../app.component';
 

@@ -585,7 +585,7 @@ html {
 }
 
 .e-search-icon::before {
-    content: '\e922';
+    content: '\e993';
 }
 
 @media screen and (max-width: 590px) {
@@ -698,6 +698,10 @@ html {
 #recentexpense-grid_toolbarItems {
     background: $white;
     border: none;
+
+    &.e-toolbar .e-toolbar-items:not(.e-tbar-pos) .e-toolbar-item:first-child {
+        margin-left: 15px;
+    }
 }
 .e-grid {
   .e-headercell {

@@ -1,12 +1,12 @@
 import { Component, ViewEncapsulation, ViewChild, OnInit, ElementRef } from '@angular/core';
 
-import { DialogComponent } from '@syncfusion/ej2-ng-popups';
+import { DialogComponent } from '@syncfusion/ej2-angular-popups';
 import { isNullOrUndefined as isNOU } from '@syncfusion/ej2-base';
-import { NumericTextBoxComponent } from '@syncfusion/ej2-ng-inputs';
+import { NumericTextBoxComponent } from '@syncfusion/ej2-angular-inputs';
 import { Query, DataManager, Predicate } from '@syncfusion/ej2-data';
-import { DropDownListComponent  } from '@syncfusion/ej2-ng-dropdowns';
-import { ChangeEventArgs, RadioButtonComponent } from '@syncfusion/ej2-ng-buttons';
-import { DatePickerComponent, TimePickerComponent } from '@syncfusion/ej2-ng-calendars';
+import { DropDownListComponent  } from '@syncfusion/ej2-angular-dropdowns';
+import { ChangeEventArgs, RadioButtonComponent } from '@syncfusion/ej2-angular-buttons';
+import { DatePickerComponent, TimePickerComponent } from '@syncfusion/ej2-angular-calendars';
 
 import { AppComponent } from '../../app.component';
 import { ContentComponent } from '../content/content.component';

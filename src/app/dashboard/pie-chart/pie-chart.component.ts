@@ -1,10 +1,10 @@
 import { Component, ViewEncapsulation, OnInit, ViewChild, HostListener } from '@angular/core';
 
-import { GridComponent } from '@syncfusion/ej2-ng-grids';
+import { GridComponent } from '@syncfusion/ej2-angular-grids';
 import { Query, DataManager } from '@syncfusion/ej2-data';
 import { isNullOrUndefined as isNOU, Browser } from '@syncfusion/ej2-base';
 import { IAccTextRenderEventArgs, IAccLoadedEventArgs, AccumulationChartComponent,
-    IAccAnimationCompleteEventArgs } from '@syncfusion/ej2-ng-charts';
+    IAccAnimationCompleteEventArgs } from '@syncfusion/ej2-angular-charts';
 
 import { AppComponent } from '../../app.component';
 
