@@ -1,7 +1,7 @@
 import { Component, ViewEncapsulation, OnInit, ViewChild } from '@angular/core';
 
 import { Query, DataManager, Predicate } from '@syncfusion/ej2-data';
-import { DateRangePickerComponent, RangeEventArgs } from '@syncfusion/ej2-ng-calendars';
+import { DateRangePickerComponent, RangeEventArgs } from '@syncfusion/ej2-angular-calendars';
 
 import { AppComponent } from '../app.component';
 import { MenuComponent } from '../menu/menu.component';

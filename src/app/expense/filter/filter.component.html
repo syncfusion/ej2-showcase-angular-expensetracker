@@ -7,7 +7,7 @@
         <div class="expense-filter-container">
             <label class="label-font">Select a range</label>
             <div class='filter-item'>
-                <ejs-daterangepicker #filterDateRange class="DateTime" format='MM/dd/yyyy' cssClass='DateTime' [startDate]='app.startDate' [endDate]='app.endDate' [showClearButton]='false' [readonly]='true' (change)='dateRangeChanged($event)'></ejs-daterangepicker>
+                <ejs-daterangepicker #filterDateRange class="DateTime" format='MM/dd/yyyy' cssClass='DateTime' [startDate]='app.startDate' [endDate]='app.endDate' [showClearButton]='false' [allowEdit]='false' (change)='dateRangeChanged($event)'></ejs-daterangepicker>
             </div>
             <label class="label-font">Category</label>
             <div class="treeview filter-item">

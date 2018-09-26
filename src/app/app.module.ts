@@ -2,13 +2,13 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { APP_BASE_HREF, HashLocationStrategy, Location, LocationStrategy} from '@angular/common';
 
-import { GridModule, PagerModule } from '@syncfusion/ej2-ng-grids';
-import { NumericTextBoxAllModule } from '@syncfusion/ej2-ng-inputs';
-import { CheckBoxAllModule, RadioButtonAllModule } from '@syncfusion/ej2-ng-buttons';
-import { ChartAllModule, AccumulationChartAllModule } from '@syncfusion/ej2-ng-charts';
-import { MultiSelectAllModule, DropDownListAllModule } from '@syncfusion/ej2-ng-dropdowns';
-import { DialogAllModule, TooltipAllModule } from '@syncfusion/ej2-ng-popups';
-import { DateRangePickerModule, DateRangePickerAllModule, DatePickerAllModule, TimePickerAllModule } from '@syncfusion/ej2-ng-calendars';
+import { GridModule, PagerModule } from '@syncfusion/ej2-angular-grids';
+import { NumericTextBoxAllModule } from '@syncfusion/ej2-angular-inputs';
+import { CheckBoxAllModule, RadioButtonAllModule } from '@syncfusion/ej2-angular-buttons';
+import { ChartAllModule, AccumulationChartAllModule } from '@syncfusion/ej2-angular-charts';
+import { MultiSelectAllModule, DropDownListAllModule } from '@syncfusion/ej2-angular-dropdowns';
+import { DialogAllModule, TooltipAllModule } from '@syncfusion/ej2-angular-popups';
+import { DateRangePickerModule, DateRangePickerAllModule, DatePickerAllModule, TimePickerAllModule } from '@syncfusion/ej2-angular-calendars';
 
 import { routing } from './app.router';
 
