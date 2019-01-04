@@ -33,19 +33,19 @@ export class AboutComponent implements OnInit {
             + 'into your applications.';
 
         this.controlList = [
-            { 'control': 'Button', 'link': 'http://ej2.syncfusion.com/angular/documentation/button/getting-started.html' },
-            { 'control': 'Chart', 'link': 'http://ej2.syncfusion.com/angular/documentation/chart/getting-started.html' },
-            { 'control': 'CheckBox', 'link': 'http://ej2.syncfusion.com/angular/documentation/check-box/getting-started.html' },
-            { 'control': 'DatePicker', 'link': 'http://ej2.syncfusion.com/angular/documentation/datepicker/getting-started.html' },
-            { 'control': 'DateRangePicker', 'link': 'http://ej2.syncfusion.com/angular/documentation/daterangepicker/getting-started.html' },
-            { 'control': 'Dialog', 'link': 'http://ej2.syncfusion.com/angular/documentation/dialog/getting-started.html' },
-            { 'control': 'DropDownList', 'link': 'http://ej2.syncfusion.com/angular/documentation/drop-down-list/getting-started.html' },
-            { 'control': 'Grid', 'link': 'http://ej2.syncfusion.com/angular/documentation/grid/getting-started.html' },
-            { 'control': 'MultiSelect', 'link': 'http://ej2.syncfusion.com/angular/documentation/multi-select/getting-started.html' },
-            { 'control': 'NumericTextBox', 'link': 'http://ej2.syncfusion.com/angular/documentation/numerictextbox/getting-started.html' },
-            { 'control': 'RadioButton' , 'link': 'http://ej2.syncfusion.com/angular/documentation/radio-button/getting-started.html'},
-            { 'control': 'TextBoxes', 'link': 'http://ej2.syncfusion.com/angular/documentation/textbox/getting-started.html' },
-            { 'control': 'TimePicker', 'link': 'http://ej2.syncfusion.com/angular/documentation/timepicker/getting-started.html' }
+            { 'control': 'Button', 'link': 'http://ej2.syncfusion.com/angular/documentation/button/getting-started/' },
+            { 'control': 'Chart', 'link': 'http://ej2.syncfusion.com/angular/documentation/chart/getting-started/' },
+            { 'control': 'CheckBox', 'link': 'http://ej2.syncfusion.com/angular/documentation/check-box/getting-started/' },
+            { 'control': 'DatePicker', 'link': 'http://ej2.syncfusion.com/angular/documentation/datepicker/getting-started/' },
+            { 'control': 'DateRangePicker', 'link': 'http://ej2.syncfusion.com/angular/documentation/daterangepicker/getting-started/' },
+            { 'control': 'Dialog', 'link': 'http://ej2.syncfusion.com/angular/documentation/dialog/getting-started/' },
+            { 'control': 'DropDownList', 'link': 'http://ej2.syncfusion.com/angular/documentation/drop-down-list/getting-started/' },
+            { 'control': 'Grid', 'link': 'http://ej2.syncfusion.com/angular/documentation/grid/getting-started/' },
+            { 'control': 'MultiSelect', 'link': 'http://ej2.syncfusion.com/angular/documentation/multi-select/getting-started/' },
+            { 'control': 'NumericTextBox', 'link': 'http://ej2.syncfusion.com/angular/documentation/numerictextbox/getting-started/' },
+            { 'control': 'RadioButton' , 'link': 'http://ej2.syncfusion.com/angular/documentation/radio-button/getting-started/'},
+            { 'control': 'TextBoxes', 'link': 'http://ej2.syncfusion.com/angular/documentation/textbox/getting-started/' },
+            { 'control': 'TimePicker', 'link': 'http://ej2.syncfusion.com/angular/documentation/timepicker/getting-started/' }
         ];
     }
 

@@ -1,8 +1,6 @@
 <div>
     <div class="row" style="margin-bottom: 16px;">
-        <div class="page-title">
-            <div style="display: inline-block">Dashboard</div>
-        </div>
+        <h1 class="page-title" style="display: inline-block;margin-bottom: -2em; margin-top: 0.175em">Dashboard</h1>
         <div class="col-md-3 col-xs-12 col-xl-6 col-lg-3 daterange overview-range-picker">
             <ejs-daterangepicker #dateRangePicker format='MM/dd/yyyy' [startDate]='app.startDate' [endDate]='app.endDate' [presets]='datePresets' [showClearButton]='false' [allowEdit]='false' (change)='onDateRangeChange($event)'></ejs-daterangepicker>
         </div>
