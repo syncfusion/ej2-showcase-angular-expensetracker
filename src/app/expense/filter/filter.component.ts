@@ -1,4 +1,4 @@
-import { Component, ViewEncapsulation, ViewChild, OnInit } from '@angular/core';
+import { Component, ViewEncapsulation, ViewChild, OnInit, ChangeDetectorRef  } from '@angular/core';
 
 import { Query, Predicate } from '@syncfusion/ej2-data';
 import { isNullOrUndefined as isNOU } from '@syncfusion/ej2-base';
@@ -47,7 +47,8 @@ export class FilterComponent implements OnInit {
 
     constructor(
         public app: AppComponent,
-        public filter: FilterService
+        public filter: FilterService,
+        private chgRef: ChangeDetectorRef
     ) {
         this.filterCategory = [];
     }
@@ -75,6 +76,7 @@ export class FilterComponent implements OnInit {
         let val: IMinMax = <IMinMax> this.filter.minMaxAmount(this.dateRangeFilter.startDate, this.dateRangeFilter.endDate);
         this.minValue = val.minValue;
         this.maxValue = val.maxValue;
+        this.chgRef.detectChanges();
     }
 
     /** Updates the Grid datasource based on the modified date range values */
