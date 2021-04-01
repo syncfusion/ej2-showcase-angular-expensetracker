@@ -9,7 +9,6 @@ import { ChangeEventArgs, RadioButtonComponent } from '@syncfusion/ej2-angular-b
 import { DatePickerComponent, TimePickerComponent } from '@syncfusion/ej2-angular-calendars';
 
 import { AppComponent } from '../../app.component';
-import { ContentComponent } from '../content/content.component';
 import { CardsComponent } from '../../dashboard/cards/cards.component';
 
 import { categoryIncomeData, categoryExpenseData } from '../../common/common.data';
@@ -18,7 +17,7 @@ import { categoryIncomeData, categoryExpenseData } from '../../common/common.dat
     selector: 'dialog-section',
     templateUrl: 'dialogs.component.html',
     encapsulation: ViewEncapsulation.None,
-    providers: [ContentComponent, CardsComponent]
+    providers: [ CardsComponent]
 })
 export class DialogsComponent implements OnInit {
     @ViewChild('dialog') dialog: DialogComponent;

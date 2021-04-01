@@ -5,10 +5,10 @@ import { Browser, rippleEffect, isNullOrUndefined as isNOU, enableRipple } from 
 import { userInfo } from '../common/common.data';
 enableRipple(true);
 
-@Directive({
-  selector: '[routerLinkActive]',
-  exportAs: 'routerLinkActive'
-})
+// @Directive({
+//   selector: '[routerLinkActive]',
+//   exportAs: 'routerLinkActive'
+// })
 
 @Component({
   selector: 'ng-app',
