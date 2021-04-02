@@ -11,7 +11,8 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "scss": "gulp styles"
+    "scss": "gulp styles",
+	"ci-publish": "gulp publish-samples"
   },
   "private": true,
   "dependencies": {
