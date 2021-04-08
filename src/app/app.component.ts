@@ -2,11 +2,6 @@ import { Component, Directive, HostListener } from '@angular/core';
 
 import { expenseData, startDate, endDate } from './common/common.data';
 
-// @Directive({
-//   selector: '[routerLinkActive]',
-//   exportAs: 'routerLinkActive'
-// })
-
 @Component({
   selector: 'app-root',
   templateUrl: 'app.component.html'
