@@ -69,6 +69,7 @@ import { DashBoardService } from './dashboard/dashboard.service';
         Location,
         CommonService,
         DashBoardService,
+        ContentComponent,
         {provide: APP_BASE_HREF, useValue : '/' },
         {provide: LocationStrategy, useClass: HashLocationStrategy}
     ]

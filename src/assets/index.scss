@@ -897,7 +897,7 @@ html {
     color: $white;
     font-size: 26px;
     text-align: center;   
-    background-image: url('./images/Wallet.png');
+    background-image: url('/assets/images/Wallet.png');
     background-repeat: no-repeat;
     background-position-y: center;
     background-position: 2.85em;
@@ -2179,7 +2179,7 @@ body.about-page {
 }
 
 .wallet-image {
-    background-image: url('./images/Wallet.svg');
+    background-image: url('/assets/images/Wallet.svg');
     background-repeat: no-repeat;
     font-family: "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
     font-size: 16px;
