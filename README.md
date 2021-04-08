@@ -19,7 +19,7 @@ npm install
 To run the sample, use the below command
 
 ```
-gulp serve
+ng serve
 ```
 
 ## Demo
