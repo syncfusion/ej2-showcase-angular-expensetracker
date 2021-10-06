@@ -918,7 +918,7 @@ input#txt {
   border: 1px solid #fff;
 }
 
-.dashboard-page .e-input-group input.e-input {
+.dashboard-page .e-input-group.e-control-wrapper.e-input-focus input.e-input {
   border-color: #fff;
   text-indent: 1em;
   padding-top: 8px;
