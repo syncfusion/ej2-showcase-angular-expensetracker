@@ -7,6 +7,37 @@
   font-weight: normal;
 }
 
+.sf-license-warning {
+  background: #e82824;
+  color: #fff;
+  font-family: 'Segoe UI';
+  font-size: medium;
+  left: 0;
+  line-height: 45px;
+  opacity: .75;
+  position: fixed;
+  right: 0;
+  text-align: center;
+  top: 0;
+  z-index: 999999999;
+}
+
+.sf-license-close-btn {
+  background: url("data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz48c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgaGVpZ2h0PSIyMCIgd2lkdGg9IjIwIiB2aWV3Qm94PSIwIDAgMjU2IDI1NiI+ICA8Zz4gICAgPHBhdGggaWQ9InBhdGgxIiB0cmFuc2Zvcm09InJvdGF0ZSgxLDEyOCwxMjgpIHRyYW5zbGF0ZSg1OS4wMTA3Nzk0NDEwNDU1LDU5KSBzY2FsZSg0LjMxMjUwMDI1NzA0NTA1LDQuMzEyNTAwMjU3MDQ1MDUpIiBmaWxsPSIjZmZmZmZmIiBkPSJNMjkuNTkwODE4LDBDMzAuMjA2OTYzLDAgMzAuODIzMjI3LDAuMjM0NDk5OTMgMzEuMjkyMjI5LDAuNzAzNDk5NzkgMzIuMjI5MjU2LDEuNjQwNTAwMSAzMi4yMjkyNTYsMy4xNjA1MDA1IDMxLjI5MjIyOSw0LjEwMDQ5OTJMMTkuMzk4MDAzLDE1Ljk5ODQ5OCAzMS4yOTIyMjksMjcuODkyNDk1QzMyLjIyOTI1NiwyOC44Mjk0OTkgMzIuMjI5MjU2LDMwLjM0OTQ5NiAzMS4yOTIyMjksMzEuMjk0NDk2IDMwLjM1NDIyNywzMi4yMzE1IDI4LjgyNzE2NCwzMi4yMzE1IDI3Ljg5MDEzOSwzMS4yOTQ0OTZMMTUuOTk3OTg4LDE5LjM5OTQ5OSA0LjEwNDc5OTIsMzEuMjk2NTAyQzMuMTY3NzczNCwzMi4yMzQ0OTggMS42Mzk3MzQ3LDMyLjIzNDQ5OCAwLjcwMjc2OTY5LDMxLjI5NjUwMiAtMC4yMzQyNTY1NiwzMC4zNTI1MDIgLTAuMjM0MjU2NTYsMjguODMyNDk4IDAuNzAyNzY5NjksMjcuODk0NTAyTDEyLjU5NjkzNCwxNS45OTg0OTggMC43MDI3Njk2OSw0LjEwMjQ5ODFDLTAuMjM0MjU2NTYsMy4xNjU0OTc4IC0wLjIzNDI1NjU2LDEuNjQ1NDk3MyAwLjcwMjc2OTY5LDAuNzA1NDk4NyAxLjYzOTczNDcsLTAuMjMxNTAxNTggMy4xNjc3NzM0LC0wLjIzMTUwMTU4IDQuMTA0Nzk5MiwwLjcwNTQ5ODdMMTUuOTk2OTUsMTIuNTk3NDk3IDI3Ljg5MDEzOSwwLjcwMzQ5OTc5QzI4LjM1ODY1LDAuMjM0NDk5OTMsMjguOTc0Njc0LDAsMjkuNTkwODE4LDB6IiAvPiAgPC9nPjwvc3ZnPg==");
+  cursor: pointer;
+  height: 20px;
+  margin-top: 14px;
+  padding-top: 10px;
+  position: absolute;
+  right: 20px;
+  width: 20px;
+}
+
+.sf-license-warning a,
+.sf-license-warning a:hover {
+  color: #ffd800;
+}
+
 .e-error {
   color: #f44336;
   font-family: "Roboto", "Segoe UI", "GeezaPro", "DejaVu Serif", "sans-serif", "-apple-system", "BlinkMacSystemFont";
@@ -5199,6 +5230,8 @@ textarea.e-input.e-small,
 .e-input-group.e-small .e-input-group-icon.e-bigger,
 .e-input-group.e-control-wrapper.e-small.e-bigger .e-input-group-icon,
 .e-input-group.e-control-wrapper.e-small .e-input-group-icon.e-bigger,
+.e-small .e-bigger.e-input-group .e-input-group-icon,
+.e-small .e-bigger.e-input-group.e-control-wrapper .e-input-group-icon,
 .e-bigger .e-input-group.e-small .e-input-group-icon,
 .e-bigger .e-input-group.e-control-wrapper.e-small .e-input-group-icon {
   font-size: 12px;
@@ -6335,6 +6368,8 @@ label.e-float-text,
 .e-input-group.e-small .e-input-group-icon.e-bigger,
 .e-input-group.e-control-wrapper.e-small.e-bigger .e-input-group-icon,
 .e-input-group.e-control-wrapper.e-small .e-input-group-icon.e-bigger,
+.e-small .e-bigger.e-input-group .e-input-group-icon,
+.e-small .e-bigger.e-input-group.e-control-wrapper .e-input-group-icon,
 .e-bigger .e-input-group.e-small .e-input-group-icon,
 .e-bigger .e-input-group.e-control-wrapper.e-small .e-input-group-icon {
   margin-bottom: 4px;
@@ -8512,7 +8547,12 @@ textarea.e-input,
 .e-input-group.e-control-wrapper.e-input-focus textarea.e-input.e-bigger,
 .e-bigger .e-input-group.e-input-focus textarea,
 .e-bigger .e-input-group.e-control-wrapper.e-input-focus textarea,
-.e-bigger .e-input-group.e-control-wrapper.e-input-focus textarea.e-input {
+.e-bigger .e-input-group.e-control-wrapper.e-input-focus textarea.e-input,
+.e-input-group.e-control-wrapper textarea.e-bigger:focus,
+.e-input-group.e-control-wrapper textarea.e-input.e-bigger:focus,
+.e-bigger .e-input-group.e-control-wrapper textarea:focus,
+.e-bigger .e-input-group.e-control-wrapper.e-input-focus textarea:focus,
+.e-bigger .e-input-group.e-control-wrapper textarea.e-input:focus {
   font: inherit;
   line-height: 1.5;
   min-height: 17px;
@@ -8525,13 +8565,8 @@ textarea.e-input,
 .e-input-group textarea.e-input.e-small,
 .e-input-group.e-control-wrapper.e-small textarea,
 .e-input-group.e-control-wrapper.e-small textarea.e-input,
-.e-input-group.e-control-wrapper textarea.e-bigger,
-.e-input-group.e-control-wrapper textarea.e-input.e-bigger,
 .e-small .e-input-group textarea,
 .e-small .e-input-group textarea.e-input,
-.e-bigger .e-input-group.e-control-wrapper textarea,
-.e-bigger .e-input-group.e-control-wrapper.e-input-focus textarea,
-.e-bigger .e-input-group.e-control-wrapper textarea.e-input,
 .e-float-input.e-small textarea,
 .e-float-input textarea.e-small,
 .e-float-input.e-control-wrapper.e-small textarea,
@@ -8550,11 +8585,8 @@ textarea.e-input,
 .e-input-group.e-input-focus textarea.e-input.e-small,
 .e-input-group.e-control-wrapper.e-input-focus.e-small textarea,
 .e-input-group.e-control-wrapper.e-input-focus.e-small textarea.e-input,
-.e-input-group.e-control-wrapper.e-input-focus textarea.e-bigger,
-.e-input-group.e-control-wrapper.e-input-focus textarea.e-input.e-bigger,
 .e-small .e-input-group.e-input-focus textarea,
-.e-small .e-input-group.e-input-focus textarea.e-input,
-.e-bigger .e-input-group.e-control-wrapper.e-input-focus textarea.e-input {
+.e-small .e-input-group.e-input-focus textarea.e-input {
   font: inherit;
   min-height: 14px;
   padding: 4px 0 4px;
@@ -8566,13 +8598,8 @@ textarea.e-input,
 .e-input-group textarea.e-input.e-small:focus,
 .e-input-group.e-control-wrapper.e-small textarea:focus,
 .e-input-group.e-control-wrapper.e-small textarea.e-input:focus,
-.e-input-group.e-control-wrapper textarea.e-bigger:focus,
-.e-input-group.e-control-wrapper textarea.e-input.e-bigger:focus,
 .e-small .e-input-group textarea:focus,
 .e-small .e-input-group textarea.e-input:focus,
-.e-bigger .e-input-group.e-control-wrapper textarea:focus,
-.e-bigger .e-input-group.e-control-wrapper.e-input-focus textarea:focus,
-.e-bigger .e-input-group.e-control-wrapper textarea.e-input:focus,
 .e-float-input.e-small textarea:focus,
 .e-float-input textarea.e-small:focus,
 .e-float-input.e-control-wrapper.e-small textarea:focus,
@@ -8628,7 +8655,8 @@ textarea.e-input,
 .e-bigger.e-small .e-input-group.e-input-focus textarea.e-input,
 .e-bigger .e-input-group.e-control-wrapper.e-input-focus.e-small textarea.e-input,
 .e-bigger.e-small .e-input-group.e-control-wrapper.e-input-focus textarea.e-input,
-.e-bigger .e-small.e-input-group.e-control-wrapper.e-input-focus textarea.e-input {
+.e-bigger .e-small.e-input-group.e-control-wrapper.e-input-focus textarea.e-input,
+.e-small .e-input-group.e-control-wrapper.e-input-focus.e-bigger textarea.e-input {
   font: inherit;
   line-height: 1.5;
   min-height: 15px;
@@ -18499,7 +18527,7 @@ ejs-calendar {
   overflow: hidden;
   user-select: none;
   font-size: 14px;
-  padding: 8px 0;
+  padding: 0;
   border: none;
   border-radius: 0;
   box-shadow: 0 5px 5px -3px rgba(0, 0, 0, 0.2), 0 8px 10px 1px rgba(0, 0, 0, 0.14), 0 3px 14px 2px rgba(0, 0, 0, 0.12);
@@ -20426,6 +20454,10 @@ ejs-calendar {
   box-shadow: 0 0 0 transparent;
 }
 
+.e-dialog .e-btn.e-dlg-closeicon-btn:active {
+  background-color: #e0e0e0;
+}
+
 .e-content-placeholder.e-dialog.e-placeholder-dialog {
   background-size: 400px 210px;
   min-height: 210px;
@@ -21494,7 +21526,7 @@ ejs-dropdownlist {
 }
 
 /*! h-scroll theme */
-.e-hscroll .e-icons {
+.e-hscroll .e-scroll-nav .e-icons {
   color: rgba(0, 0, 0, 0.54);
 }
 
@@ -24439,6 +24471,11 @@ ejs-multiselect {
   width: 1px;
 }
 
+.e-radio:not(:checked):hover + label.e-rtl::after,
+.e-radio:not(:checked):hover + label.e-right::after {
+  left: auto;
+}
+
 .e-radio + label {
   -webkit-tap-highlight-color: transparent;
   cursor: pointer;
@@ -25093,6 +25130,7 @@ ejs-multiselect {
   stroke-width: 4;
 }
 
+.e-spinner-pane .e-spinner-inner .e-spin-fluent,
 .e-spinner-pane .e-spinner-inner .e-spin-fabric {
   animation: fabric-spinner-rotate 1.3s infinite cubic-bezier(0.53, 0.21, 0.29, 0.67);
   display: block;
@@ -25100,6 +25138,8 @@ ejs-multiselect {
   overflow: visible;
 }
 
+.e-spinner-pane .e-spinner-inner .e-spin-fluent .e-path-arc,
+.e-spinner-pane .e-spinner-inner .e-spin-fluent .e-path-circle,
 .e-spinner-pane .e-spinner-inner .e-spin-fabric .e-path-arc,
 .e-spinner-pane .e-spinner-inner .e-spin-fabric .e-path-circle {
   fill: none;
@@ -25145,10 +25185,12 @@ ejs-multiselect {
   color: rgba(0, 0, 0, 0.87);
 }
 
+.e-spinner-pane .e-spinner-inner .e-spin-fluent .e-path-circle,
 .e-spinner-pane .e-spinner-inner .e-spin-fabric .e-path-circle {
   stroke: rgba(66, 115, 249, 0.4);
 }
 
+.e-spinner-pane .e-spinner-inner .e-spin-fluent .e-path-arc,
 .e-spinner-pane .e-spinner-inner .e-spin-fabric .e-path-arc {
   stroke: #4273F9;
 }
@@ -26101,9 +26143,8 @@ ejs-multiselect {
   align-content: center;
   align-items: center;
   display: flex;
-  height: auto;
-  justify-content: center;
   height: 36px;
+  justify-content: center;
 }
 
 .e-toolbar .e-toolbar-pop .e-toolbar-item > * {
@@ -26644,6 +26685,10 @@ ejs-multiselect {
   box-shadow: 0 2px 2px 1px rgba(0, 0, 0, 0.21);
 }
 
+.e-toolbar.e-extended-toolbar .e-toolbar-pop {
+  background: #fafafa;
+}
+
 .e-toolbar.e-toolpop .e-hor-nav.e-nav-active,
 .e-toolbar.e-toolpop .e-hor-nav.e-nav-active:not(.e-expended-nav) {
   background: rgba(0, 0, 0, 0.12);
@@ -26785,6 +26830,11 @@ ejs-multiselect {
 
 .e-arrow-tip-inner.e-tip-left::before {
   content: '\e84b';
+}
+
+/*! tooltip popup container layout */
+.e-tooltip-popup-container {
+  position: relative;
 }
 
 /*! tooltip layout */
@@ -27227,6 +27277,16 @@ ejs-multiselect {
 .e-bigger .e-grid,
 .e-grid.e-bigger {
   font-size: 13px;
+}
+
+.e-bigger .e-grid .e-gridheader thead .e-icons:not(.e-check):not(.e-stop),
+.e-grid.e-bigger .e-gridheader thead .e-icons:not(.e-check):not(.e-stop) {
+  font-size: 10px;
+}
+
+.e-bigger .e-grid .e-row .e-icon-rowdragicon::before,
+.e-grid.e-bigger .e-row .e-icon-rowdragicon::before {
+  font-size: 10px;
 }
 
 .e-bigger .e-grid .e-toolbar-items .e-toolbar-item.e-search-wrapper,
@@ -28237,7 +28297,7 @@ ejs-multiselect {
 
 .e-grid .e-gridheader .e-frozenheader .e-headercell .e-rhandler:last-of-type,
 .e-grid .e-gridheader .e-frozenheader .e-headercell .e-rsuppress:last-of-type {
-  right: -1px;
+  right: 0;
 }
 
 .e-grid .e-gridheader .e-frozenheader.e-frozen-right-header .e-headercell .e-rhandler,
@@ -30701,6 +30761,11 @@ ejs-multiselect {
   position: initial;
 }
 
+.e-bigger .e-responsive-dialog .e-dlg-header-content .e-btn.e-dlg-closeicon-btn,
+.e-bigger.e-responsive-dialog .e-dlg-header-content .e-btn.e-dlg-closeicon-btn {
+  background-color: transparent;
+}
+
 .e-bigger .e-responsive-dialog .e-dlg-header-content .e-btn .e-btn-icon,
 .e-bigger.e-responsive-dialog .e-dlg-header-content .e-btn .e-btn-icon {
   color: #000;
@@ -30997,6 +31062,25 @@ ejs-multiselect {
   background-color: transparent;
 }
 
+.e-bigger .e-responsive-dialog .e-defaultcell.e-ralign,
+.e-bigger .e-responsive-dialog .e-editedrow .e-defaultcell.e-ralign,
+.e-bigger .e-responsive-dialog .e-insertedrow .e-defaultcell.e-ralign,
+.e-bigger .e-responsive-dialog .e-defaultcell.e-ralign:focus,
+.e-bigger .e-responsive-dialog .e-insertedrow .e-defaultcell.e-ralign:focus
+.e-bigger .e-responsive-dialog .e-editedrow .e-defaultcell.e-ralign:focus,
+.e-bigger.e-responsive-dialog .e-defaultcell.e-ralign,
+.e-bigger.e-responsive-dialog .e-editedrow .e-defaultcell.e-ralign,
+.e-bigger.e-responsive-dialog .e-insertedrow .e-defaultcell.e-ralign,
+.e-bigger.e-responsive-dialog .e-defaultcell.e-ralign:focus,
+.e-bigger.e-responsive-dialog .e-insertedrow .e-defaultcell.e-ralign:focus
+.e-bigger .e-responsive-dialog .e-editedrow .e-defaultcell.e-ralign:focus,
+.e-bigger .e-responsive-dialog .e-insertedrow .e-defaultcell.e-ralign:focus
+.e-bigger.e-responsive-dialog .e-editedrow .e-defaultcell.e-ralign:focus,
+.e-bigger.e-responsive-dialog .e-insertedrow .e-defaultcell.e-ralign:focus
+.e-bigger.e-responsive-dialog .e-editedrow .e-defaultcell.e-ralign:focus {
+  padding-right: 10px;
+}
+
 .e-bigger .e-responsive-dialog.e-ressortdiv .e-dlg-header-content .e-dlg-header .e-res-custom-element .e-res-apply-btn,
 .e-bigger.e-responsive-dialog.e-ressortdiv .e-dlg-header-content .e-dlg-header .e-res-custom-element .e-res-apply-btn {
   padding-top: 0;
@@ -31045,7 +31129,12 @@ ejs-multiselect {
   box-shadow: 0 0 0 1px #9e9e9e inset;
 }
 
-.e-grid .e-gridheader .e-icons:not(.e-icon-hide):not(.e-check):not(.e-stop) {
+.e-grid .e-gridheader .e-icons:not(.e-icon-hide):not(.e-check):not(.e-stop):not(.e-icon-reorderuparrow):not(.e-icon-reorderdownarrow) {
+  color: #212121;
+}
+
+.e-grid .e-gridheader .e-headercontent .e-icon-reorderuparrow,
+.e-grid .e-gridheader .e-headercontent .e-icon-reorderdownarrow {
   color: #212121;
 }
 
@@ -31800,6 +31889,17 @@ ejs-multiselect {
   padding: 6px;
 }
 
+.e-bigger .e-pager .e-pp,
+.e-bigger .e-pager .e-np,
+.e-bigger .e-pager .e-pp:hover,
+.e-bigger .e-pager .e-np:hover,
+.e-pager.e-bigger .e-pp,
+.e-pager.e-bigger .e-np,
+.e-pager.e-bigger .e-pp:hover,
+.e-pager.e-bigger .e-np:hover {
+  font-size: 22px;
+}
+
 .e-pager {
   border-style: solid;
   border-width: 1px;
@@ -32217,14 +32317,19 @@ ejs-multiselect {
   }
 }
 
-.e-pager.sf-pager .e-last,
-.e-pager.sf-pager .e-mnext,
-.e-pager.sf-pager .e-mlast {
-  margin-left: -4px;
+.e-pager.sf-pager .e-pagercontainer .e-first,
+.e-pager.sf-pager .e-pagercontainer .e-prev,
+.e-pager.sf-pager .e-pagercontainer .e-next,
+.e-pager.sf-pager .e-pagercontainer .e-last {
+  font-size: 9px;
 }
 
-.e-pager.sf-pager .e-prev {
-  margin-left: -3px;
+.e-pager.sf-pager .e-numericcontainer a {
+  font-size: 13px;
+}
+
+.e-pager.sf-pager .e-pagercontainer {
+  font-size: 0;
 }
 
 .e-pager.sf-pager .e-link,
