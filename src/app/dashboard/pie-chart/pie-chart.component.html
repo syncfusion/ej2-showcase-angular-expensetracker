@@ -8,7 +8,7 @@
                 </div>
                 <div class="row">
                     <div class="pieChart">
-                        <ejs-accumulationchart style='display: block;' #pie id="total-expense" #pie width='100%' height='350px' enableSmartLabels=true
+                        <ejs-accumulationchart style='display: block;' #pie id="total-expense" width='100%' height='350px' enableSmartLabels=true
                             [legendSettings]='legendSettings' (textRender)='onTextRender($event)' (animationComplete)='onAnimateCompleted($event)'
                             (loaded)='onChartLoaded($event)'>
                             <e-accumulation-series-collection>
