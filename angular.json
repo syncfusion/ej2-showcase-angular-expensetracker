@@ -16,7 +16,7 @@
             "outputPath": "output",
             "index": "src/index.html",
             "main": "src/main.ts",
-            "polyfills": "src/polyfills.ts",
+            "polyfills": "",
             "tsConfig": "tsconfig.app.json",
             "aot": true,
             "assets": [
@@ -80,7 +80,7 @@
           "builder": "@angular-devkit/build-angular:karma",
           "options": {
             "main": "src/test.ts",
-            "polyfills": "src/polyfills.ts",
+            "polyfills": "",
             "tsConfig": "tsconfig.spec.json",
             "karmaConfig": "karma.conf.js",
             "assets": [
@@ -120,5 +120,8 @@
         }
       }
     }},
-  "defaultProject": "ej2-ng-expense-tracker"
+  "defaultProject": "ej2-ng-expense-tracker",
+  "cli": {
+    "analytics": false
+  }
 }

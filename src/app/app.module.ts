@@ -2,7 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { APP_BASE_HREF, HashLocationStrategy, Location, LocationStrategy} from '@angular/common';
 
-import { GridModule, PagerModule } from '@syncfusion/ej2-angular-grids';
+import { GridModule, PagerModule, ToolbarService } from '@syncfusion/ej2-angular-grids';
 import { NumericTextBoxAllModule } from '@syncfusion/ej2-angular-inputs';
 import { CheckBoxAllModule, RadioButtonAllModule } from '@syncfusion/ej2-angular-buttons';
 import { ChartAllModule, AccumulationChartAllModule } from '@syncfusion/ej2-angular-charts';
@@ -70,6 +70,7 @@ import { DashBoardService } from './dashboard/dashboard.service';
         CommonService,
         DashBoardService,
         ContentComponent,
+        ToolbarService, 
         {provide: APP_BASE_HREF, useValue : '/' },
         {provide: LocationStrategy, useClass: HashLocationStrategy}
     ]
